@@ -13,6 +13,7 @@ df.head()
 
 
 # 변수 추가 및 삭제
+
 # 연령대
 df["teens"] = df["15~19세"]
 df["young_adults"] = df["20대"] + df["30대"]
