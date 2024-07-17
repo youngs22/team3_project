@@ -11,8 +11,6 @@ df = df.rename(columns = {"소계" : "total", "남자" : "male", "여자" : "fem
 df.head()
 
 
-
-
 # 변수 추가 및 삭제
 
 # 연령대
