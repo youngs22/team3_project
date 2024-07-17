@@ -10,6 +10,11 @@ route = route.rename(columns = {"시점":"year", "항목":"access_path", "소계
 
 route.head()
 
+# 결측치 제거
+route.replace('-', np.nan, inplace=True)
+route["teens"].replace('-', np.nan, inplace=True)
+route.isna().sum()
+
 # 항목
 route.loc[route["access_path"]=="과거 방문 경험", "access_path"] = "experience"
 route.loc[route["access_path"]=="주변인(친지/친구/동료 등)", "access_path"] = "acquaintance"
@@ -21,10 +26,6 @@ route.loc[route["access_path"]=="여행사(방문, 전화)", "access_path"] = "t
 route.loc[route["access_path"]=="정보 없이 방문", "access_path"] = "no_information"
 route.loc[route["access_path"]=="기타", "access_path"] = "etc"
 route.head()
-
-# 결측치 제거
-route.replace('-', np.nan, inplace=True)
-route
 
 # 연령대
 #route = route.rename(columns = {"15~19세":"teens", "20대":"20years", "30대" : "30years", 
@@ -46,7 +47,7 @@ route["h_sal"] = route["500~600만원 미만"] + route["600만원 이상"]
 route["nr"]= route["무응답"]
 
 route = route.drop(['100만원 미만', '100~200만원 미만', '200~300만원 미만', '300~400만원 미만', '400~500만원 미만',\
-                '500~600만원 미만', '600만원 이상'], axis=1)
+                '500~600만원 미만', '600만원 이상', "무응답"], axis=1)
                 
 
 # 가구
@@ -67,5 +68,15 @@ route = route.drop(['임금봉급근로자', '고용원있는사업주', '고용
                     '무급가족 종사자', '사무전문', '기술생산노무', '판매서비스',
                     "자영업","전업주부","학생","무직은퇴","기타"], axis=1)
 route
+
+# 전처리한 데이터 파일 추출
+route.to_excel('pre_route.xlsx', index=False)
+
+
+# 연도별 여행 정보 경로
+travel.groupby("year")\
+      .agg(mean_travel=("total", "mean"))
+      
+
 
 
