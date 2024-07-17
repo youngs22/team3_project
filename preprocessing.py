@@ -13,9 +13,9 @@ df.head()
 
 # 변수 추가 및 삭제
 # 연령대
-df["teen"] = df["15~19세"]
-df["ya"] = df["20대"] + df["30대"]
-df["ma"] = df["40대"] + df["50대"]
+df["teens"] = df["15~19세"]
+df["young_adults"] = df["20대"] + df["30대"]
+df["middle_adults"] = df["40대"] + df["50대"]
 df["senior"] = df["60대"] + df["70세 이상"]
 df = df.drop(['15~19세', '20대', '30대', '40대', '50대', '60대', '70세 이상'], axis=1)
 # 월급
