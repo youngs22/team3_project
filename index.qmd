@@ -1,0 +1,13 @@
+---
+title: "이삭토스트 맛있조"
+jupyter: python3
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{python}
+1 + 1
+
+```
