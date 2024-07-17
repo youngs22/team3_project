@@ -7,7 +7,7 @@ df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/LSBigdata_Proje
 df.head()
 
 # 변수 변경
-df = df.rename(columns = {"소계" : "total", "남자" : "M", "여자" : "F"})
+df = df.rename(columns = {"소계" : "total", "남자" : "male", "여자" : "female"})
 df.head()
 
 
