@@ -102,5 +102,6 @@ tour_top30.info()
 tour_top30.shape
 tour_top30.to_excel('pre_tour_top30.xlsx', index=False)
 
+# commit test용 
 # 전처리한 데이터 파일 추출
 # route.to_excel('pre_route.xlsx', index=False)
