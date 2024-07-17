@@ -61,38 +61,59 @@ num_trip = num_trip.drop(num_trip.columns[np.arange(5,17,1)], axis=1)
 
 # 데이터 전처리 시
 # 원본 : 39개 열, 파생변수 : 4 + 4 = 8 개열 생성, 열 삭제 : 27개 열 삭제
-# 39 + 4 + 4 - 27 = 21 개의 columns이 생성됩니다.
+# 39 + 4 + 4 - 27 = 20 개의 columns이 생성됩니다.
 
 # 데이터 확인
-# 데이터를 pre_data 폴더에 excel 형태로 저장하여 데이터 프레임의 형태 확인
-num_trip.to_excel(excel_writer = 'pre_data/p_num_trip.xlsx')
-
-# 열의 이름 변경, 파생 변수, 삭제 된 결과의 excel 파일을 새로운 데이터 프레임으로 저장
-p_num_trip = pd.read_excel('pre_data/p_num_trip.xlsx')
+num_trip.info()
+num_trip.shape
+num_trip.describe()
+num_trip.head(12)
+num_trip.tail(12)
 
 # 데이터 문제점
 # 1. year의 null값을 채워야함
 # 2018, 2019, 2020, 2021, 2022 슬라이싱
-p_num_trip['year'][1 :12] = 2018
-p_num_trip['year'][13:24] = 2019
-p_num_trip['year'][25:36] = 2020
-p_num_trip['year'][37:48] = 2021
-p_num_trip['year'][49:60] = 2022
+num_trip['year'][1 :12] = 2018
+num_trip['year'][13:24] = 2019
+num_trip['year'][25:36] = 2020
+num_trip['year'][37:48] = 2021
+num_trip['year'][49:60] = 2022
 
 # 2. month의 '월'값을 제거한 후 int값으로 형 변환 필요
 # str 에서 맨 마지막 글자 제거
-p_num_trip['month'] = p_num_trip['month'].str.replace('월','')
-p_num_trip['month'] = p_num_trip['month'].astype('int')
+num_trip['month'] = num_trip['month'].str.replace('월','')
+num_trip['month'] = num_trip['month'].astype('int')
 
 # 3. nr(월급 미 응답자)의 nan값이 '-'로 대응되어 있음
-p_num_trip.loc[p_num_trip["nr"] == "-", ["nr"]] = np.nan
+num_trip.loc[num_trip["nr"] == "-", ["nr"]] = np.nan
 
-# 4. Unnamed: 0 이라는 0부터 59까지 차례로 총 60개의 값들이 들어가있음, 제거 필요
-p_num_trip = p_num_trip.drop(columns = 'Unnamed: 0')
+# 데이터를 data폴더에 전처리 이후 데이터로 excel형태로 추출하고 형태 확인
+# Unnamed: 0 이라는 인덱스가 생성되는 것을 방지하기 위해 index=False로 지정
+# 가공된 데이터라는 의미인 (processing) 의 p를 파일 앞에 붙여 전처리 유무 구분
+num_trip.to_excel(excel_writer = 'data/p_num_trip.xlsx', index=False)
+
+
+# 전처리 된 데이터 불러오기
+p_num_trip = pd.read_excel('data/p_num_trip.xlsx')
 
 # 데이터 정보 확인하기
 # p_num_trip(년-월 별 여행 횟수)데이터 정보 확인하기
 p_num_trip.info()
+p_num_trip.shape
+p_num_trip.head()
+p_num_trip.describe()
+
+# 데이터 시각화
+# 2018년 ~ 2022년 남녀의 여행 총 횟수를 비교하기
+
+
+
+
+
+
+
+
+
 
 
 
