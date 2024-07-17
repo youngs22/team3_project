@@ -2,11 +2,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+# 파일 불러오기
 df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/LSBigdata_Project1/data/select.xlsx")
 df.head()
 
 # 변수 변경
-df = df.rename(columns = {"소계" : "total", "남자" : "M", "여자" : "F"})
+df = df.rename(columns = {"소계" : "total", "남자" : "male", "여자" : "female"})
 df.head()
 
 
