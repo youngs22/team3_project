@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "이삭토스트 맛있조"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+
