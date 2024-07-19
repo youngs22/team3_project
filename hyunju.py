@@ -74,3 +74,5 @@ male_2018 = df_2018[["item","male"]].sort_index("item")
 
 
 
+
+
