@@ -3,8 +3,11 @@ import pandas as pd
 import numpy as np
 
 # 데이터 불러오기
+# data : 원본 파일 저장 폴더
+# pre_data : 전처리 후 파일 저장 폴더
+
 # header를 두번째 행으로 고정
-num_trip = pd.read_excel('pre_data/R_월별_국내여행_횟수_20240714204514.xlsx', header=1)
+num_trip = pd.read_excel('data/R_월별_국내여행_횟수_20240714204514.xlsx', header=1)
 
 # 데이터 전처리
 
@@ -90,30 +93,4 @@ num_trip.loc[num_trip["nr"] == "-", ["nr"]] = np.nan
 # 데이터를 data폴더에 전처리 이후 데이터로 excel형태로 추출하고 형태 확인
 # Unnamed: 0 이라는 인덱스가 생성되는 것을 방지하기 위해 index=False로 지정
 # 가공된 데이터라는 의미인 (processing) 의 p를 파일 앞에 붙여 전처리 유무 구분
-num_trip.to_excel(excel_writer = 'data/p_num_trip.xlsx', index=False)
-
-
-# 전처리 된 데이터 불러오기
-p_num_trip = pd.read_excel('data/p_num_trip.xlsx')
-
-# 데이터 정보 확인하기
-# p_num_trip(년-월 별 여행 횟수)데이터 정보 확인하기
-p_num_trip.info()
-p_num_trip.shape
-p_num_trip.head()
-p_num_trip.describe()
-
-# 데이터 시각화
-# 2018년 ~ 2022년 남녀의 여행 총 횟수를 비교하기
-
-
-
-
-
-
-
-
-
-
-
-
+num_trip.to_excel(excel_writer = 'pre_data/p_num_trip.xlsx', index=False)
