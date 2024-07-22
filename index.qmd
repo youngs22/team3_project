@@ -1,9 +1,17 @@
 ---
-title: "이삭토스트 맛있조"
+title: "Team_Project3"
 jupyter: python3
+toc: false
+about:
+    id: hero-heading
+    template: jolla
+    links:
+     - icon: twitter
+       text: twitter
+       href: https://twitter.com
+     - icon: github
+       text: Github
+       href: https://github.com
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
-
+About this site
