@@ -9,8 +9,43 @@
   {
     "objectID": "index.html",
     "href": "index.html",
+    "title": "Team_Project3",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "유나.html",
+    "href": "유나.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "현주.html",
+    "href": "현주.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "선아.html",
+    "href": "선아.html",
     "title": "이삭토스트 맛있조",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n2"
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "결론.html",
+    "href": "결론.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "한결.html",
+    "href": "한결.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
   }
 ]

@@ -7,8 +7,16 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
-
+      - href: 한결.qmd
+        text: 한결
+      - href: 유나.qmd
+        text: 유나
+      - href: 현주.qmd
+        text: 현주
+      - href: 선아.qmd
+        text: 선아
+      - href: 결론.qmd
+        text: 결론
 format:
   html:
     theme: cosmo
