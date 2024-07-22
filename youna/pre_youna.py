@@ -19,6 +19,11 @@ route.loc[36:43,"year"] = 2022
 route["year"]=route["year"].astype(int)
 route
 
+# 결측치 제거
+route.replace('-', np.nan, inplace=True)
+route.isna().sum()
+
+
 # 항목
 route.loc[route["access_path"]=="과거 방문 경험", "access_path"] = "experience"
 route.loc[route["access_path"]=="주변인(친지/친구/동료 등)", "access_path"] = "acquaintance"
@@ -31,10 +36,6 @@ route.loc[route["access_path"]=="정보 없이 방문", "access_path"] = "no_inf
 route.loc[route["access_path"]=="기타", "access_path"] = "etc"
 route.head()
 
-# 결측치 제거
-route.replace('-', np.nan, inplace=True)
-route.isna().sum()
-
 # 연령대
 #route = route.rename(columns = {"15~19세":"teens", "20대":"20years", "30대" : "30years", 
 #                                "40대":"40years", "50대":"50years", "60대":"60years",
@@ -43,9 +44,30 @@ route.isna().sum()
 route["teens"] = route["15~19세"]   
 route["young_adults"] = route["20대"] + route["30대"]
 route["middle_adults"] = route["40대"] + route["50대"]
-route["seniors"] = route["60대"] + route["70세 이상"]
+route["senior"] = route["60대"] + route["70세 이상"]
 route = route.drop(['15~19세', '20대', '30대', '40대', '50대', '60대', '70세 이상'], axis=1)
 route.info()
+
+#2018
+route.loc[0:8, "young_adults"]  = (route.loc[0:8, "young_adults"]  / route.loc[0:8, "young_adults"].sum() * 100).round(1)
+route.loc[0:8, "middle_adults"] = (route.loc[0:8, "middle_adults"] / route.loc[0:8, "middle_adults"].sum() * 100).round(1)
+route.loc[0:8, "senior"] = (route.loc[0:8, "senior"]        / route.loc[0:8, "senior"].sum() * 100).round(1)
+#2019
+route.loc[9:17, "young_adults"]  = (route.loc[9:17, "young_adults"]  / route.loc[9:17, "young_adults"].sum() * 100).round(1)
+route.loc[9:17, "middle_adults"] = (route.loc[9:17, "middle_adults"] / route.loc[9:17, "middle_adults"].sum() * 100).round(1)
+route.loc[9:17, "senior"] = (route.loc[9:17, "senior"]        / route.loc[9:17, "senior"].sum() * 100).round(1)
+#2020
+route.loc[18:26, "young_adults"]  = (route.loc[18:26, "young_adults"]  / route.loc[18:26, "young_adults"].sum() * 100).round(1)
+route.loc[18:26, "middle_adults"]    = (route.loc[18:26, "middle_adults"] / route.loc[18:26, "middle_adults"].sum() * 100).round(1)
+route.loc[18:26, "senior"] = (route.loc[18:26, "senior"]       / route.loc[18:26, "senior"].sum() * 100).round(1)
+#2021
+route.loc[27:35, "young_adults"]  = (route.loc[27:35, "young_adults"]  / route.loc[27:35, "young_adults"].sum() * 100).round(1)
+route.loc[27:35, "middle_adults"] = (route.loc[27:35, "middle_adults"] / route.loc[27:35, "middle_adults"].sum() * 100).round(1)
+route.loc[27:35, "senior"] = (route.loc[27:35, "senior"]        / route.loc[27:35, "senior"].sum() * 100).round(1)
+#2022
+route.loc[36:43, "young_adults"]  = (route.loc[36:43, "young_adults"]  / route.loc[36:43, "young_adults"].sum() * 100).round(1)
+route.loc[36:43, "middle_adults"] = (route.loc[36:43, "middle_adults"] / route.loc[36:43, "middle_adults"].sum() * 100).round(1)
+route.loc[36:43, "senior"] = (route.loc[36:43, "senior"]        / route.loc[36:43, "senior"].sum() * 100).round(1)
 
 
 # 월급
@@ -53,6 +75,27 @@ route["l_sal"] = route["100만원 미만"] + route["100~200만원 미만"]
 route["m_sal"] = route["200~300만원 미만"] + route["300~400만원 미만"] + route["400~500만원 미만"]
 route["h_sal"] = route["500~600만원 미만"] + route["600만원 이상"]
 route["nr"]= route["무응답"]
+
+#2018
+route.loc[0:8, "l_sal"] = (route.loc[0:8, "l_sal"] / route.loc[0:8, "l_sal"].sum() * 100).round(1)
+route.loc[0:8, "m_sal"] = (route.loc[0:8, "m_sal"] / route.loc[0:8, "m_sal"].sum() * 100).round(1)
+route.loc[0:8, "h_sal"] = (route.loc[0:8, "h_sal"] / route.loc[0:8, "h_sal"].sum() * 100).round(1)
+#2019
+route.loc[9:17, "l_sal"] = (route.loc[9:17, "l_sal"] / route.loc[9:17, "l_sal"].sum() * 100).round(1)
+route.loc[9:17, "m_sal"] = (route.loc[9:17, "m_sal"] / route.loc[9:17, "m_sal"].sum() * 100).round(1)
+route.loc[9:17, "h_sal"] = (route.loc[9:17, "h_sal"] / route.loc[9:17, "h_sal"].sum() * 100).round(1)
+#2020
+route.loc[18:26, "l_sal"] = (route.loc[18:26, "l_sal"] / route.loc[18:26, "l_sal"].sum() * 100).round(1)
+route.loc[18:26, "m_sal"] = (route.loc[18:26, "m_sal"] / route.loc[18:26, "m_sal"].sum() * 100).round(1)
+route.loc[18:26, "h_sal"] = (route.loc[18:26, "h_sal"] / route.loc[18:26, "h_sal"].sum() * 100).round(1)
+#2021
+route.loc[27:35, "l_sal"] = (route.loc[27:35, "l_sal"] / route.loc[27:35, "l_sal"].sum() * 100).round(1)
+route.loc[27:35, "m_sal"] = (route.loc[27:35, "m_sal"] / route.loc[27:35, "m_sal"].sum() * 100).round(1)
+route.loc[27:35, "h_sal"] = (route.loc[27:35, "h_sal"] / route.loc[27:35, "h_sal"].sum() * 100).round(1)
+#2022
+route.loc[36:43, "l_sal"] = (route.loc[36:43, "l_sal"] / route.loc[36:43, "l_sal"].sum() * 100).round(1)
+route.loc[36:43, "m_sal"] = (route.loc[36:43, "m_sal"] / route.loc[36:43, "m_sal"].sum() * 100).round(1)
+route.loc[36:43, "h_sal"] = (route.loc[36:43, "h_sal"] / route.loc[36:43, "h_sal"].sum() * 100).round(1)
 
 route = route.drop(['100만원 미만', '100~200만원 미만', '200~300만원 미만', '300~400만원 미만', '400~500만원 미만',\
                 '500~600만원 미만', '600만원 이상', "무응답"], axis=1)
