@@ -22,25 +22,11 @@ plt.tight_layout()
 plt.show()
 plt.clf()
 
-# 시/군/구 빈도 확인하기
-count_city = tour_top30['city'].value_counts()
-plt.figure(figsize=(4, 2))
-count_city.plot.bar(rot=90)
-plt.xticks(fontsize=8)
-plt.yticks(fontsize=8)
-# 여백을 수동으로 조정합니다.
-plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.2)
-# 글자가 잘리지 않도록 레이아웃을 자동으로 조정합니다.
-plt.tight_layout()
-# 그림을 표시합니다.
-plt.show()
-plt.clf()
-
 # 시/군/구 구체적인 빈도 확인하기
-count_combined_city = tour_top30['combined_city'].value_counts()
-plt.figure(figsize=(4, 2))
-count_combined_city.plot.bar(rot=90)
-plt.xticks(fontsize=8)
+count_combined_city = tour_top30['combined_city'].value_counts().head(10)
+plt.figure(figsize=(3, 2))
+count_combined_city.plot.bar(rot=45)
+plt.xticks(fontsize=6)
 plt.yticks(fontsize=8)
 # 여백을 수동으로 조정합니다.
 plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.2)
@@ -52,9 +38,9 @@ plt.clf()
 
 #관광지명 빈도 확인하기
 count_city = tour_top30['spot'].value_counts()
-plt.figure(figsize=(6, 3))
-count_city.plot.bar(rot=90)
-plt.xticks(fontsize=8)
+plt.figure(figsize=(5, 3))
+count_city.plot.bar(rot=80)
+plt.xticks(fontsize=6)
 plt.yticks(fontsize=8)
 # 여백을 수동으로 조정합니다.
 plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.2)
@@ -67,8 +53,8 @@ plt.clf()
 #중분류 빈도 확인하기
 count_city = tour_top30['category_m'].value_counts()
 plt.figure(figsize=(8, 4))
-count_city.plot.bar(rot=0)
-plt.xticks(fontsize=8)
+count_city.plot.bar(rot=45)
+plt.xticks(fontsize=6)
 plt.yticks(fontsize=8)
 # 여백을 수동으로 조정합니다.
 plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.2)
@@ -86,9 +72,9 @@ count_city = tour_top30['category_s'].value_counts()
 # 먼저 그림의 크기를 설정합니다.
 plt.figure(figsize=(6, 4))
 # 그런 다음 바 차트를 그립니다.
-count_city.plot.bar(rot=90)
+count_city.plot.bar(rot=45)
 # x축과 y축 레이블 크기를 조정합니다.
-plt.xticks(fontsize=8)
+plt.xticks(fontsize=6)
 plt.yticks(fontsize=8)
 # 여백을 수동으로 조정합니다.
 plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.2)
@@ -110,8 +96,8 @@ tour_top30.groupby('year') \
 #관광지명 빈도 확인하기
 count_city = tour_top30(['spot'] & ['year'] == 2018).value_counts()
 plt.figure(figsize=(6, 3))
-count_city.plot.bar(rot=90)
-plt.xticks(fontsize=8)
+count_city.plot.bar(rot=45)
+plt.xticks(fontsize=6)
 plt.yticks(fontsize=8)
 # 여백을 수동으로 조정합니다.
 plt.subplots_adjust(left=0.1, right=0.9, top=0.9, bottom=0.2)
@@ -120,3 +106,4 @@ plt.tight_layout()
 # 그림을 표시합니다.
 plt.show()
 plt.clf()
+
