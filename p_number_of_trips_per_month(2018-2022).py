@@ -67,7 +67,7 @@ num_trip = num_trip.drop(num_trip.columns[np.arange(5,17,1)], axis=1)
 # 39 + 4 + 4 - 27 = 20 개의 columns이 생성됩니다.
 
 # 데이터 확인
-num_trip.info()
+num_trip.info() 
 num_trip.shape
 num_trip.describe()
 num_trip.head(12)

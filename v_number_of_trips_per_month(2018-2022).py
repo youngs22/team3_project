@@ -135,7 +135,7 @@ plt.bar(x_range+0.2, per2_total, width=0.2, label='2인 가구', color = 'coral'
 plt.bar(x_range+0.4, per3_total, width=0.2, label='3인 이상 가구', color = 'teal')
 
 # x축 라벨 설정
-plt.xticks(x_range+0.25, years)
+plt.xticks(x_range+0.25, years) 
 
 # 범례추가
 plt.legend()
