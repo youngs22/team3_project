@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>이삭토스트 맛있조 - 여행 정보를 얻는 경로</title>
+<title>이삭토스트 맛있조 - 여행 정보 획득 경로</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">여행 정보를 얻는 경로</h1>
+<h1 class="title">여행 정보 획득 경로</h1>
 </div>
 
 
@@ -208,7 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="전처리">전처리</h2>
 <section id="데이터-불러오기" class="level3">
 <h3 class="anchored" data-anchor-id="데이터-불러오기">데이터 불러오기</h3>
-<div id="f82613da" class="cell" data-execution_count="1">
+<div id="e01dea76" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -496,7 +496,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="결측치-처리" class="level3">
 <h3 class="anchored" data-anchor-id="결측치-처리">결측치 처리</h3>
-<div id="c275e852" class="cell" data-execution_count="2">
+<div id="67dd144c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 연도 결측치 처리</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>,<span class="st">"year"</span>] <span class="op">=</span> <span class="st">"2018"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>,<span class="st">"year"</span>] <span class="op">=</span> <span class="st">"2019"</span></span>
@@ -508,7 +508,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>route.replace(<span class="st">'-'</span>, np.nan, inplace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>route.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_15392\1570473434.py:9: FutureWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_11104\1570473434.py:9: FutureWarning:
 
 Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
 </code></pre>
@@ -560,7 +560,7 @@ dtype: int64</code></pre>
 </section>
 <section id="변수명-바꾸기" class="level3">
 <h3 class="anchored" data-anchor-id="변수명-바꾸기">변수명 바꾸기</h3>
-<div id="b51d9907" class="cell" data-execution_count="3">
+<div id="9bfab27c" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수 영어로 변경</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.rename(columns <span class="op">=</span> {<span class="st">"시점"</span>:<span class="st">"year"</span>, <span class="st">"항목"</span>:<span class="st">"access_path"</span>, <span class="st">"소계"</span> : <span class="st">"total"</span>, <span class="st">"남자"</span> : <span class="st">"male"</span>, <span class="st">"여자"</span> : <span class="st">"female"</span>})</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -640,7 +640,7 @@ memory usage: 13.9+ KB</code></pre>
 </section>
 <section id="변수-합치기" class="level3">
 <h3 class="anchored" data-anchor-id="변수-합치기">변수 합치기</h3>
-<div id="a0b92963" class="cell" data-execution_count="4">
+<div id="4d2cb055" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 연령대</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"teens"</span>] <span class="op">=</span> route[<span class="st">"15~19세"</span>]   </span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"young_adults"</span>] <span class="op">=</span> route[<span class="st">"20대"</span>] <span class="op">+</span> route[<span class="st">"30대"</span>]</span>
@@ -723,7 +723,7 @@ dtypes: float64(42), object(2)
 memory usage: 15.3+ KB</code></pre>
 </div>
 </div>
-<div id="7266bd10" class="cell" data-execution_count="5">
+<div id="3fffe124" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#월급</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"l_sal"</span>] <span class="op">=</span> route[<span class="st">"100만원 미만"</span>] <span class="op">+</span> route[<span class="st">"100~200만원 미만"</span>]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"m_sal"</span>] <span class="op">=</span> route[<span class="st">"200~300만원 미만"</span>] <span class="op">+</span> route[<span class="st">"300~400만원 미만"</span>] <span class="op">+</span> route[<span class="st">"400~500만원 미만"</span>]</span>
@@ -812,7 +812,7 @@ memory usage: 16.6+ KB</code></pre>
 </section>
 <section id="불필요한-열-없애기" class="level3">
 <h3 class="anchored" data-anchor-id="불필요한-열-없애기">불필요한 열 없애기</h3>
-<div id="6375ac0e" class="cell" data-execution_count="6">
+<div id="cbd772fa" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 나이</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.drop([<span class="st">'15~19세'</span>, <span class="st">'20대'</span>, <span class="st">'30대'</span>, <span class="st">'40대'</span>, <span class="st">'50대'</span>, <span class="st">'60대'</span>, <span class="st">'70세 이상'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -858,14 +858,14 @@ memory usage: 7.3+ KB</code></pre>
 </section>
 <section id="전처리한-데이터-파일-추출" class="level3">
 <h3 class="anchored" data-anchor-id="전처리한-데이터-파일-추출">전처리한 데이터 파일 추출</h3>
-<div id="8dd99bed" class="cell" data-execution_count="7">
+<div id="5b22aca8" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>route.to_excel(<span class="st">'pre_route.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="개년-평균-경로-순위-막대그래프" class="level2">
 <h2 class="anchored" data-anchor-id="개년-평균-경로-순위-막대그래프">5개년 평균 경로 순위 막대그래프</h2>
-<div id="78451df1" class="cell" data-execution_count="8">
+<div id="dffc9ef8" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -892,7 +892,7 @@ memory usage: 7.3+ KB</code></pre>
 <span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'5개년 평균 여행 정보 획득 경로'</span>,fontsize<span class="op">=</span><span class="dv">15</span>)</span>
 <span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_15392\2622033830.py:19: FutureWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_11104\2622033830.py:19: FutureWarning:
 
 
 
@@ -911,7 +911,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </section>
 <section id="연도별-정보-획득-경로-추이" class="level2">
 <h2 class="anchored" data-anchor-id="연도별-정보-획득-경로-추이">연도별 정보 획득 경로 추이</h2>
-<div id="19dd2ed1" class="cell" data-execution_count="9">
+<div id="6988984e" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.ticker <span class="im">import</span> MaxNLocator</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>pre_route <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/pre_route.xlsx"</span>)</span>
