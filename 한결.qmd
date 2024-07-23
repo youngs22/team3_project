@@ -1,7 +1,6 @@
 ---
-title: "About"
+title: "연도별 국내 여행 횟수 트랜드"
 jupyter: python3
 ---
 
 About this site
-
