@@ -7,7 +7,7 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
+        text: 서론
       - href: 한결.qmd
         text: 연별 국내 여행 횟수 트랜드
       - href: 유나.qmd

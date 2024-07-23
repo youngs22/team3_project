@@ -189,7 +189,6 @@ plt.title("여행을 선택하는 이유 - 전체")
 plt.xlabel("년도")
 plt.ylabel("전체 %")
 plt.legend(fontsize='x-small',loc='center left')
-plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
 plt.show()
 
 ```
