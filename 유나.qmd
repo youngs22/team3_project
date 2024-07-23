@@ -166,8 +166,6 @@ plt.show()
 
 ![원래이미지](https://www.notion.so/f63f7b1015844a1980d929db3297bb6b)
 
-## 정보 획득 경로 Top4에서 성별 차이
-
 ```{python}
 route_p = route[route['access_path'].isin(['acquaintance', 'experience', 'no_information', 'internet_mobile_app'])]
 route_s = route_p.groupby('access_path')[['male', 'female']].mean()
