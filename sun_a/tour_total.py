@@ -130,7 +130,7 @@ years = range(2018, 2023)
 top10_spots_total_list = []
 
 for year in years:
-    top10_spots_year = top10_spots_total[top10_spots_total['year'] == year].head(3)
+    top10_spots_year = top10_spots_total[top10_spots_total['year'] == year].head(1)
     top10_spots_total_list.append(top10_spots_year)
 
 # 시각화를 위해 데이터 재구성
@@ -156,6 +156,7 @@ plt.ylabel('검색수')
 plt.legend(title='Spot', bbox_to_anchor=(1.05, 1), loc='upper left', prop={'size': 5})
 plt.grid(True)
 plt.tight_layout()
+plt.xticks(years)  # x축 눈금 설정
 plt.show()
 plt.clf()
 
