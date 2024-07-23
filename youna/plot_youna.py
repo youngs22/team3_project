@@ -33,12 +33,56 @@ plt.show()
 
 
 # 연도별로 정보 획득 경로 순위 어떻게 변하는지
-route['year'] = route['year'].astype(int)
-route_path = route.groupby(['year', 'access_path'])['total'].mean().unstack()
-route_path['year'] = route_path['year'].astype(int)
 plt.clf()
 
+route['year'] = route['year'].astype(int)
+route_p = route[route['access_path'].isin(['acquaintance', 'experience', 'no_information', 'internet_mobile_app'])]
+route_y = route_p.groupby(['year','access_path'])["total"].sum().unstack()
+
 plt.figure(figsize=(12, 6))
+route_y.plot()
+
+plt.subplots_adjust(right=0.71)
+plt.legend(loc='upper left', bbox_to_anchor=(1, 1), fontsize=7)
+plt.rcParams['font.family'] ='Malgun Gothic'
+plt.title('연도 별 여행 정보 획득 경로',fontsize=15)
+plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+route['year'] = route['year'].astype(int)
+route_path = route.groupby(['year', 'access_path'])['total'].sum().unstack()
+plt.clf()
+
+
+plt.figure(figsize=(12, 6))
+route_path.plot(ylim=[7,45])
+
+plt.subplots_adjust(right=0.71)
+plt.legend(loc='upper left', bbox_to_anchor=(1, 1))
+plt.rcParams['font.family'] ='Malgun Gothic'
+plt.title('연도 별 여행 정보 획득 경로',fontsize=15)
+plt.show()
+
+
+
+route['year'] = route['year'].astype(int)
+route_path = route.groupby(['year', 'access_path'])\
+                  .agg(total=("total","sum"))\
+                  .unstack()
+                  
+plt.figure(figsize=(12, 6))             
+route_path.index = route_path.index.astype(int)
 route_path.plot(ylim=[7,45])
 
 plt.rcParams['font.family'] ='Malgun Gothic'

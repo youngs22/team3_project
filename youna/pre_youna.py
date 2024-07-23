@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 
-
 route = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/youna_route.xlsx",header=1)
 route.head(10)
 
