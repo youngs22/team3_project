@@ -33,7 +33,6 @@ plt.ylabel('검색수')
 plt.legend(title='Spot', bbox_to_anchor=(1.05, 1), loc='upper left', prop={'size': 5})
 plt.grid(True)
 plt.tight_layout()
-plt.xticks(years)  # x축 눈금 설정
 plt.show()
 plt.clf()
 # 중분류 수정본
@@ -71,45 +70,4 @@ plt.grid(True)
 plt.tight_layout()
 #plt.xticks(years)  # x축 눈금 설정
 plt.show()
-
-# 중분류 추이
-# 'year'과 'category_m' 열로 그룹화하여 'search_count' 합계 구하기 및 정렬
-top10_categories_total = tour_total.groupby(['year', 'category_m']) \
-                                   .agg(count_tour=('search_count', 'sum')) \
-                                   .reset_index() \
-                                   .sort_values(['year', 'count_tour'], ascending=[True, False])
-
-# 각 연도별로 top10 카테고리 추출
-years = range(2018, 2023)
-top10_categories_total_list = []
-
-for year in years:
-    top10_categories_year = top10_categories_total[top10_categories_total['year'] == year].head(3)
-    top10_categories_total_list.append(top10_categories_year)
-
-# 시각화를 위해 데이터 재구성
-top_categories = pd.concat(top10_categories_total_list)['category_m'].unique()
-plot_data = pd.DataFrame(index=years, columns=top_categories)
-
-for year in years:
-    yearly_data = top10_categories_total[top10_categories_total['year'] == year].set_index('category_m')
-    for category in top_categories:
-        if category in yearly_data.index:
-            plot_data.at[year, category] = yearly_data.at[category, 'count_tour']
-        else:
-            plot_data.at[year, category] = 0
-
-# 그래프 그리기
-plt.figure(figsize=(4, 2))
-for category in top_categories:
-    plt.plot(plot_data.index, plot_data[category], marker='o', label=category)
-
-plt.title('<2018~2022 관광지 중분류 Top 3>')
-plt.xlabel('년도')
-plt.ylabel('검색수 (단위: 천만 회)')
-plt.legend(title='Category', bbox_to_anchor=(1.05, 1), loc='upper left', prop={'size': 7})
-plt.grid(True)
-plt.tight_layout()
-plt.show()
-plt.clf()
 
