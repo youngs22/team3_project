@@ -113,6 +113,33 @@ num_trip = num_trip.drop(num_trip.columns[np.arange(5,17,1)], axis=1)
 ##### 원본 : 39개 열, 파생변수 : 4 + 4 = 8 개열 생성, 열 삭제 : 27개 열 삭제 → 총 39 + 4 + 4 - 27 = 20 개의 columns이 생성됩니다.
 
 ------------------------------------------------------------------------
+<<<<<<< HEAD
+
+### 데이터의 정보 확인하기 - info(), shape, head(), tail(), describe() 이용
+
+```{python}
+num_trip.info()
+```
+
+```{python}
+num_trip.shape
+```
+
+```{python}
+num_trip.describe()
+```
+
+```{python}
+num_trip.head(12)
+```
+
+```{python}
+num_trip.tail(12)
+```
+
+------------------------------------------------------------------------
+=======
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 
 ### 그 외의 전처리 방법
 

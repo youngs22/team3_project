@@ -1,5 +1,5 @@
 ---
-title: "여행 정보를 얻는 경로"
+title: "여행 정보 획득 경로"
 jupyter: python3
 ---
 
@@ -12,7 +12,6 @@ import numpy as np
 import pandas as pd
 
 route = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/youna_route.xlsx",header=1)
-route.head(10)
 ```
 
 ### 결측치 처리
@@ -27,7 +26,6 @@ route.loc[36:43,"year"] = "2022"
 
 # 결측치 제거
 route.replace('-', np.nan, inplace=True)
-route.isna().sum()
 
 ```
 
@@ -59,7 +57,6 @@ route = route.rename(columns = { '초졸 이하' : 'elmt',
 						'고등학교' : 'high',
 						'대학교이상' : 'univ+',
 						})
-route.info()
 ```
 
 ### 변수 합치기
@@ -92,7 +89,6 @@ route.loc[36:43, "young_adults"]  = (route.loc[36:43, "young_adults"]  / route.l
 route.loc[36:43, "middle_adults"] = (route.loc[36:43, "middle_adults"] / route.loc[36:43, "middle_adults"].sum() * 100).round(1)
 route.loc[36:43, "senior"] = (route.loc[36:43, "senior"]        / route.loc[36:43, "senior"].sum() * 100).round(1)
 
-route.info()
 ```
 
 ```{python}
@@ -122,7 +118,6 @@ route.loc[27:35, "h_sal"] = (route.loc[27:35, "h_sal"] / route.loc[27:35, "h_sal
 route.loc[36:43, "l_sal"] = (route.loc[36:43, "l_sal"] / route.loc[36:43, "l_sal"].sum() * 100).round(1)
 route.loc[36:43, "m_sal"] = (route.loc[36:43, "m_sal"] / route.loc[36:43, "m_sal"].sum() * 100).round(1)
 route.loc[36:43, "h_sal"] = (route.loc[36:43, "h_sal"] / route.loc[36:43, "h_sal"].sum() * 100).round(1)
-route.info()
 
 ```
 
@@ -139,7 +134,7 @@ route = route.drop(['임금봉급근로자', '고용원있는사업주', '고용
                     
 # 월급                  
 route = route.drop(['100만원 미만', '100~200만원 미만', '200~300만원 미만', '300~400만원 미만', '400~500만원 미만','500~600만원 미만', '600만원 이상', "무응답"], axis=1)
-route.info()
+route.info() 
 ```
 
 ### 전처리한 데이터 파일 추출
@@ -186,13 +181,13 @@ from matplotlib.ticker import MaxNLocator
 pre_route = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/pre_route.xlsx")
 
 route_path1 = pre_route.query("access_path=='acquaintance'")
-route_path2 = pre_route.query("access_path=='advertising'")
+route_path2 = pre_route.query("access_path=='experience'")
 route_path3 = pre_route.query("access_path=='no_information'")
 route_path4 = pre_route.query("access_path=='internet_mobile_app'")
 
 plt.clf()
 plt.plot(route_path1["year"], route_path1["total"], marker='o', label="지인 추천")
-plt.plot(route_path2["year"], route_path2["total"], marker='o', label="광고(TV, 라디오 등)")
+plt.plot(route_path2["year"], route_path2["total"], marker='o', label="과거경험")
 plt.plot(route_path3["year"], route_path3["total"], marker='o', label="정보 없이 여행")
 plt.plot(route_path4["year"], route_path4["total"], marker='o', label="인터넷 및 모바일앱")
 

@@ -98,7 +98,9 @@ tour_total_rank = tour_total.groupby("spot")\
         
 tour_total_rank.sort_values(["mean"], ascending=False)
 
-## 각 연도별  TOP 10 관광지 구하기
+# 각 연도별  TOP3 관광지 구하기
+from matplotlib.ticker import MaxNLocator
+
 ranking1 = tour_total.query("spot=='에버랜드'")
 ranking2 = tour_total.query("spot=='속초관광수산시장'")
 ranking3 = tour_total.query("spot=='코엑스'")
@@ -109,6 +111,7 @@ plt.plot(ranking1["year"], ranking1["search_count"], marker='o', label="에버�
 plt.plot(ranking2["year"], ranking2["search_count"], marker='o', label='속초관광수산시장')
 plt.plot(ranking3["year"], ranking3["search_count"], marker='o', label='코엑스')
 
+plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
 plt.title('상위 3개 관광지 5년 추이')
 plt.xlabel('년도')
 plt.ylabel('검색수')
@@ -128,7 +131,9 @@ tour_total_c = tour_total.groupby("category_m")\
         
 tour_total_c.sort_values(["c_sum"], ascending=False)
 
-# 연도별
+# 각 연도별  TOP3 관광지 중분류 구하기
+from matplotlib.ticker import MaxNLocator
+
 tour_total_c2 = tour_total.groupby(["year","category_m"], as_index=False)\
                             .agg(category_sum = ("search_count","sum"))
 
@@ -147,7 +152,8 @@ plt.plot(ranking4["year"], ranking4["category_sum"], marker='o', label="쇼핑")
 plt.plot(ranking5["year"], ranking5["category_sum"], marker='o', label='자연관광')
 plt.plot(ranking6["year"], ranking6["category_sum"], marker='o', label='문화관광')
 
-plt.title('2018~2022 관광지 중분류 Top3')
+plt.gca().xaxis.set_major_locator(MaxNLocator(integer=True))
+plt.title('상위 3개 관광지 중분류 5년 추이')
 plt.xlabel('년도')
 plt.ylabel('검색수 (단위: 천만 회)')
 plt.legend(title='Spot', bbox_to_anchor=(1.05, 1), loc='upper left', prop={'size': 10})
