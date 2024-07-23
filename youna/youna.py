@@ -119,14 +119,14 @@ plt.show()
 
 
 # 연도별로 정보 획득 경로 순위 어떻게 변하는지
-route_path = route.groupby(['year', 'access_path'])['total'].mean().unstack()
+route_path = route.groupby(['year', 'access_path'])['total'].sum().unstack()
 plt.clf()
 
 plt.figure(figsize=(12, 6))
-route_path.plot()
+route_path.plot(ylim=[7,45])
 
 plt.subplots_adjust(right=0.71)
-plt.legend(loc='upper left', bbox_to_anchor=(1, 1))
+plt.legend(loc='upper left', bbox_to_anchor=(1, 1),fontsize=7)
 plt.rcParams['font.family'] ='Malgun Gothic'
 plt.title('연도 별 여행 정보 획득 경로',fontsize=15)
 plt.show()
