@@ -25,7 +25,7 @@ sns.barplot(data=route2, x="access_path", y="total_mean", palette = "Set1")
 plt.xlabel('여행 정보 획득 경로')
 plt.ylabel('소계')
 plt.xticks(rotation=20)
-plt.xticks(fontsize=8)
+plt.xticks(fontsize=7)
 plt.title('5개년 평균 여행 정보 획득 경로',fontsize=15)
 plt.show()
 
@@ -33,17 +33,22 @@ plt.show()
 
 
 # 연도별로 정보 획득 경로 순위 어떻게 변하는지
+
+pre_route = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/pre_route.xlsx")
+
+route_path1 = pre_route.query("access_path=='acquaintance'")
+route_path2 = pre_route.query("access_path=='advertising'")
+route_path3 = pre_route.query("access_path=='no_information'")
+route_path4 = pre_route.query("access_path=='internet_mobile_app'")
+
 plt.clf()
-
-route['year'] = route['year'].astype(int)
-route_p = route[route['access_path'].isin(['acquaintance', 'experience', 'no_information', 'internet_mobile_app'])]
-route_y = route_p.groupby(['year','access_path'])["total"].sum().unstack()
-
-plt.figure(figsize=(12, 6))
-route_y.plot()
+plt.plot(route_path1["year"], route_path1["total"], marker='o', label="지인 추천")
+plt.plot(route_path2["year"], route_path2["total"], marker='o', label="광고(TV, 라디오 등)")
+plt.plot(route_path3["year"], route_path3["total"], marker='o', label="정보 없이 여행")
+plt.plot(route_path4["year"], route_path4["total"], marker='o', label="인터넷 및 모바일앱")
 
 plt.subplots_adjust(right=0.71)
-plt.legend(loc='upper left', bbox_to_anchor=(1, 1), fontsize=7)
+plt.legend(loc='upper left', bbox_to_anchor=(1, 1),fontsize=7)
 plt.rcParams['font.family'] ='Malgun Gothic'
 plt.title('연도 별 여행 정보 획득 경로',fontsize=15)
 plt.show()
@@ -56,41 +61,24 @@ plt.show()
 
 
 
+pre_route = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/pre_route.xlsx")
 
+route_path1 = pre_route.query("access_path=='acquaintance'")
+route_path2 = pre_route.query("access_path=='advertising'")
+route_path3 = pre_route.query("access_path=='no_information'")
+route_path4 = pre_route.query("access_path=='internet_mobile_app'")
 
-
-
-route['year'] = route['year'].astype(int)
-route_path = route.groupby(['year', 'access_path'])['total'].sum().unstack()
 plt.clf()
-
-
-plt.figure(figsize=(12, 6))
-route_path.plot(ylim=[7,45])
+plt.plot(route_path1["year"], route_path1["total"], marker='o', label="지인 추천")
+plt.plot(route_path2["year"], route_path2["total"], marker='o', label="광고(TV, 라디오 등)")
+plt.plot(route_path3["year"], route_path3["total"], marker='o', label="정보 없이 여행")
+plt.plot(route_path4["year"], route_path4["total"], marker='o', label="인터넷 및 모바일앱")
 
 plt.subplots_adjust(right=0.71)
-plt.legend(loc='upper left', bbox_to_anchor=(1, 1))
+plt.legend(loc='upper left', bbox_to_anchor=(1, 1),fontsize=7)
 plt.rcParams['font.family'] ='Malgun Gothic'
 plt.title('연도 별 여행 정보 획득 경로',fontsize=15)
 plt.show()
-
-
-
-route['year'] = route['year'].astype(int)
-route_path = route.groupby(['year', 'access_path'])\
-                  .agg(total=("total","sum"))\
-                  .unstack()
-                  
-plt.figure(figsize=(12, 6))             
-route_path.index = route_path.index.astype(int)
-route_path.plot(ylim=[7,45])
-
-plt.rcParams['font.family'] ='Malgun Gothic'
-plt.subplots_adjust(right=0.71)
-plt.legend(loc='upper left', bbox_to_anchor=(1, 1), fontsize=8.3)
-plt.title('연도 별 여행 정보 획득 경로',fontsize=15)
-plt.show()
-
 
 # 경로 Top 4에서는 가구원 수가 많이 이용하는지 -> 연도합평균
 route_p = route[route['access_path'].isin(['acquaintance', 'experience', 'no_information', 'internet_mobile_app'])]
@@ -141,6 +129,7 @@ plt.show()
 
 
 # 경로 Top 4에서는 어떤 연령대가 많이 이용하는지 -> 연도합평균
+
 route_p = route[route['access_path'].isin(['acquaintance', 'experience', 'no_information', 'internet_mobile_app'])]
 route_m = route_p.groupby('access_path')[["teens","young_adults","middle_adults","senior"]].mean()
 route_m

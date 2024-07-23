@@ -12,7 +12,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 파일 불러오기
-df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/LSBigdata_Project1/data/select.xlsx")
+df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx")
 df.head()
 
 # 변수 변경
@@ -102,7 +102,6 @@ df.to_excel('pre_select.xlsx', index=False)
 
 ```
 
-
 ## 년도별 여행지 선택 5순위
 
 ```{python}
@@ -151,7 +150,9 @@ fig.update_layout(
 fig.show()
 
 ```
+
 ## 여행을 선택하는 이유
+
 ```{python}
 
 #선 그래프
@@ -175,7 +176,9 @@ plt.legend(fontsize='x-small',loc='center left')
 plt.show()
 
 ```
+
 ## 여행지 고르는 이유 - 남자
+
 ```{python}
 #남자
 male_2018 = df_2018[["item", "male"]].sort_values(by="item")
@@ -245,4 +248,3 @@ plt.clf()
 
 
 ```
-
