@@ -62,7 +62,7 @@ plt.show()
 # 이후 그래프를 초기화합니다.
 plt.clf()
 
-## 각 연도별  TOP 10 지역 구하기
+## 각 연도별 TOP 5 지역 구하기
 # 'year'과 'combined_city' 열로 그룹화하여 'search_count' 합계 구하기
 # top10_cities_per_year -> top10_cities
 top10_cities = tour_total.groupby(['year', 'combined_city']) \
@@ -70,13 +70,6 @@ top10_cities = tour_total.groupby(['year', 'combined_city']) \
                                  .reset_index() \
                                  .sort_values(['year', 'count_tour'], ascending=[True, False])
 
-# 각 연도별로 top10 도시 추이 출력
-for year in range(2018, 2023):
-    top10_cities_year = top10_cities[top10_cities['year'] == year].head(10)
-    print(f"=== {year}년 top10 도시 ===")
-    print(top10_cities_year)
-    print()
-    
 # 5년 top5 도시 시각화
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -90,7 +83,7 @@ top10_cities_total = tour_total.groupby(['year', 'combined_city']) \
                                .reset_index() \
                                .sort_values(['year', 'count_tour'], ascending=[True, False])
 
-# 연도별 top10 도시 추출
+# 연도별 top5 도시 추출
 years = range(2018, 2023)
 top10_cities_total_list = []
 
