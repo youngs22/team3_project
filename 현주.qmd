@@ -4,7 +4,7 @@ jupyter: python3
 ---
 
 ## 전처리
-
+### 파일 불러오기 및 변수 변경
 ```{python}
 
 import numpy as np
@@ -19,16 +19,17 @@ df.head()
 df = df.rename(columns = {"소계" : "total", "남자" : "male", "여자" : "female"})
 df.head()
 
+```
 
 
-
-# 변수 추가 및 삭제
-
+### 연령대 변수 추가 및 삭제
+```{python}
 # 연령대
 df["teens"] = df["15~19세"]
 df["young_adults"] = df["20대"] + df["30대"]
 df["middle_adults"] = df["40대"] + df["50대"]
 df["senior"] = df["60대"] + df["70세 이상"]
+
 #2018 각 값을 열의 합계로 나눈뒤 100을 곱하여 백분율 계산. 소수점 1까지 반올림
 df.loc[0:14, "young_adults"] = (df.loc[0:14, "young_adults"] / df.loc[0:14, "young_adults"].sum() * 100).round(1)
 df.loc[0:14, "middle_adults"] = (df.loc[0:14, "middle_adults"] / df.loc[0:14, "middle_adults"].sum() * 100).round(1)
@@ -51,8 +52,10 @@ df.loc[60:74, "middle_adults"] = (df.loc[60:74, "middle_adults"] / df.loc[60:74,
 df.loc[60:74, "senior"] = (df.loc[60:74, "senior"] / df.loc[60:74, "senior"].sum() * 100).round(1)
 
 df = df.drop(['15~19세', '20대', '30대', '40대', '50대', '60대', '70세 이상'], axis=1)
+```
 
-# 월급
+### 월급 변수 추가 및 삭제
+```{python}
 df["l_sal"] = df["100만원 미만"] + df["100~200만원 미만"]
 df["m_sal"] = df["200~300만원 미만"] + df["300~400만원 미만"] + df["400~500만원 미만"]
 df["h_sal"] = df["500~600만원 미만"] + df["600만원 이상"]
@@ -80,6 +83,11 @@ df.loc[60:74, "h_sal"] = (df.loc[60:74, "h_sal"] / df.loc[60:74, "h_sal"].sum() 
 
 df = df.drop(['100만원 미만', '100~200만원 미만', '200~300만원 미만', '300~400만원 미만', '400~500만원 미만',\
                 '500~600만원 미만', '600만원 이상'], axis=1)
+                
+```
+
+### 가구, 학벌, 무응답 rename
+```{python}
 # 가구
 df = df.rename(columns = { '1인' : 'per1',
 			'2인' : 'per2',
@@ -101,7 +109,7 @@ df.columns
 df.to_excel('pre_select.xlsx', index=False)
 
 ```
-
+-------------------------------------------------------------------------------
 
 ## 년도별 여행지 선택 5순위
 
@@ -132,13 +140,13 @@ total_2022 = df_2022.sort_values("total", ascending = False).head()
 
 total_all = pd.concat([total_2018, total_2019, total_2020, total_2021, total_2022]).iloc[:, :3]
 total_all_pivot = total_all.pivot(index='year', columns='item', values='total')
-total_all_pivot.plot(kind='bar', figsize=(10, 6))
+
 
 fig = px.bar(total_all_pivot, title='년도별 여행지 선택 5순위', labels={'value': '총합', 'year': '년도'})
 # 레이아웃 설정
 fig.update_layout(
-    xaxis_title='Year',
-    yaxis_title='Total',
+    xaxis_title='년도',
+    yaxis_title='총합',
     legend_title_text='Item',
     legend=dict(
         x=1,  # x 위치 (1은 그래프의 가장 오른쪽)
@@ -151,6 +159,8 @@ fig.update_layout(
 fig.show()
 
 ```
+
+--------------------------------------------------------------------------------
 ## 여행을 선택하는 이유
 ```{python}
 
@@ -173,76 +183,6 @@ plt.xlabel("년도")
 plt.ylabel("전체 %")
 plt.legend(fontsize='x-small',loc='center left')
 plt.show()
-
-```
-## 여행지 고르는 이유 - 남자
-```{python}
-#남자
-male_2018 = df_2018[["item", "male"]].sort_values(by="item")
-male_2019 = df_2019[["item", "male"]].sort_values(by="item")
-male_2020 = df_2020[["item", "male"]].sort_values(by="item")
-male_2021 = df_2021[["item", "male"]].sort_values(by="item")
-male_2022 = df_2022[["item", "male"]].sort_values(by="item")
-
-male_All = pd.merge(male_2018, male_2019, how = 'left', on = 'item')
-male_All = pd.merge(male_All, male_2020, how = 'left', on = 'item', suffixes=('', '_2020'))
-male_All = pd.merge(male_All, male_2021, how = 'left', on = 'item', suffixes=('', '_2021'))
-male_All = pd.merge(male_All, male_2022, how = 'left', on = 'item', suffixes=('', '_2022'))
-
-
-# 각 연도별 열 이름 변경 (이미 올바르게 되어있다면 생략 가능)
-male_All.columns = ['item', 'male_2018', 'male_2019', 'male_2020', 'male_2021', 'male_2022']
-
-# 각 행의 총합을 계산하여 새로운 열에 추가합니다.
-male_All['total_male'] = male_All[['male_2018', 'male_2019', 'male_2020', 'male_2021', 'male_2022']].sum(axis=1)
-
-# 필요 없는 열 삭제 및 total_male 기준으로 정렬
-male_All = male_All.drop(columns=['male_2018', 'male_2019', 'male_2020', 'male_2021', 'male_2022']).sort_values(by='total_male', ascending=False)
-
-male_All.head()
-
-M = male_All.head().plot.bar(rot = 0, color='green', title='여행지 고르는 이유 순위 - 남자')
-M.set_xticklabels(['볼거리', '지명도', '이동거리', '여행시간', '동반자유형'])
-
-plt.show()
-plt.clf()
-
-
-```
-
-## 여행지 고르는 이유 - 여자
-
-```{python}
-
-# 여자 데이터 정렬
-female_2018 = df_2018[["item", "female"]].sort_values(by="item")
-female_2019 = df_2019[["item", "female"]].sort_values(by="item")
-female_2020 = df_2020[["item", "female"]].sort_values(by="item")
-female_2021 = df_2021[["item", "female"]].sort_values(by="item")
-female_2022 = df_2022[["item", "female"]].sort_values(by="item")
-
-# 데이터 병합
-female_All = pd.merge(female_2018, female_2019, how='left', on='item', suffixes=('_2018', '_2019'))
-female_All = pd.merge(female_All, female_2020, how='left', on='item')
-female_All = pd.merge(female_All, female_2021, how='left', on='item')
-female_All = pd.merge(female_All, female_2022, how='left', on='item')
-
-# 각 연도별 열 이름 변경 (필요한 경우)
-female_All.columns = ['item', 'female_2018', 'female_2019', 'female_2020', 'female_2021', 'female_2022']
-
-# 각 행의 총합을 계산하여 새로운 열에 추가합니다.
-female_All['total_female'] = female_All[['female_2018', 'female_2019', 'female_2020', 'female_2021', 'female_2022']].sum(axis=1)
-
-# 필요 없는 열 삭제 및 total_female 기준으로 내림차순 정렬
-female_All = female_All.drop(columns=['female_2018', 'female_2019', 'female_2020', 'female_2021', 'female_2022']).sort_values(by='total_female', ascending=False)
-
-F =female_All.head().plot.bar(rot = 0, color='blue', title='여행지 고르는 이유 순위 - 여자')
-F.set_xticklabels(['볼거리', '지명도', '여행시간', '이동거리', '음식'])
-
-plt.show()
-plt.clf()
-
-
 
 ```
 
