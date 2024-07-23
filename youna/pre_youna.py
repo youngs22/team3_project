@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 
-
 route = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/youna_route.xlsx",header=1)
 route.head(10)
 
@@ -9,19 +8,15 @@ route.head(10)
 route = route.rename(columns = {"시점":"year", "항목":"access_path", "소계" : "total", "남자" : "male", "여자" : "female"})
 
 route.head()
-
 # 연도 결측치 처리
-route.loc[0:8,"year"] = 2018
-route.loc[9:17,"year"] = 2019
-route.loc[18:26,"year"] = 2020
-route.loc[27:35,"year"] = 2021
-route.loc[36:43,"year"] = 2022
-route["year"]=route["year"].astype(int)
-route
+route.loc[0:8,"year"] = '2018'
+route.loc[9:17,"year"] = '2019'
+route.loc[18:26,"year"] = '2020'
+route.loc[27:35,"year"] = '2021'
+route.loc[36:43,"year"] = '2022'
 
 # 결측치 제거
 route.replace('-', np.nan, inplace=True)
-route.isna().sum()
 
 
 # 항목
@@ -37,10 +32,7 @@ route.loc[route["access_path"]=="기타", "access_path"] = "etc"
 route.head()
 
 # 연령대
-#route = route.rename(columns = {"15~19세":"teens", "20대":"20years", "30대" : "30years", 
-#                                "40대":"40years", "50대":"50years", "60대":"60years",
-#                               "70세 이상":"70years+"})
-  
+
 route["teens"] = route["15~19세"]   
 route["young_adults"] = route["20대"] + route["30대"]
 route["middle_adults"] = route["40대"] + route["50대"]
@@ -68,6 +60,8 @@ route.loc[27:35, "senior"] = (route.loc[27:35, "senior"]        / route.loc[27:3
 route.loc[36:43, "young_adults"]  = (route.loc[36:43, "young_adults"]  / route.loc[36:43, "young_adults"].sum() * 100).round(1)
 route.loc[36:43, "middle_adults"] = (route.loc[36:43, "middle_adults"] / route.loc[36:43, "middle_adults"].sum() * 100).round(1)
 route.loc[36:43, "senior"] = (route.loc[36:43, "senior"]        / route.loc[36:43, "senior"].sum() * 100).round(1)
+
+df = df.drop(['15~19세', '20대', '30대', '40대', '50대', '60대', '70세 이상'], axis=1)
 
 
 # 월급
@@ -112,13 +106,12 @@ route = route.rename(columns = { '초졸 이하' : 'elmt',
 						'고등학교' : 'high',
 						'대학교이상' : 'univ+',
 						})
-route.info()
 
 # 직업
 route = route.drop(['임금봉급근로자', '고용원있는사업주', '고용원없는자영업자', 
                     '무급가족 종사자', '사무전문', '기술생산노무', '판매서비스',
                     "자영업","전업주부","학생","무직은퇴","기타"], axis=1)
-route
+
 
 # 결측치 제거
 route.replace('-', np.nan, inplace=True)

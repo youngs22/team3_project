@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -124,7 +158,13 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#전처리" id="toc-전처리" class="nav-link active" data-scroll-target="#전처리">전처리</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -150,8 +190,225 @@ ul.task-list li input[type="checkbox"] {
 
 <p>This is a Quarto website.</p>
 <p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<section id="전처리" class="level2">
+<h2 class="anchored" data-anchor-id="전처리">전처리</h2>
+<div id="c2af6fc6" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터 로드</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>tour_2018 <span class="op">=</span> pd.read_csv(<span class="st">'data/ranking_2018.csv'</span>, encoding<span class="op">=</span><span class="st">'cp949'</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>tour_2019 <span class="op">=</span> pd.read_csv(<span class="st">'data/ranking_2019.csv'</span>, encoding<span class="op">=</span><span class="st">'cp949'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>tour_2020 <span class="op">=</span> pd.read_csv(<span class="st">'data/ranking_2020.csv'</span>, encoding<span class="op">=</span><span class="st">'cp949'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>tour_2021 <span class="op">=</span> pd.read_csv(<span class="st">'data/ranking_2021.csv'</span>, encoding<span class="op">=</span><span class="st">'cp949'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>tour_2022 <span class="op">=</span> pd.read_csv(<span class="st">'data/ranking_2022.csv'</span>, encoding<span class="op">=</span><span class="st">'cp949'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 열 이름 변경</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>rename_dict <span class="op">=</span> {<span class="st">'순위'</span>: <span class="st">'ranking'</span>, <span class="st">'광역시/도'</span>: <span class="st">'state'</span>, <span class="st">'시/군/구'</span>: <span class="st">'city'</span>, <span class="st">'관광지명'</span>: <span class="st">'spot'</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>               <span class="st">'도로명주소'</span>: <span class="st">'address'</span>, <span class="st">'중분류 카테고리'</span>: <span class="st">'category_m'</span>, <span class="st">'소분류 카테고리'</span>: <span class="st">'category_s'</span>, <span class="st">'검색건수'</span>: <span class="st">'search_count'</span>}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>tour_2018.rename(columns<span class="op">=</span>rename_dict, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>tour_2019.rename(columns<span class="op">=</span>rename_dict, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>tour_2020.rename(columns<span class="op">=</span>rename_dict, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>tour_2021.rename(columns<span class="op">=</span>rename_dict, inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>tour_2022.rename(columns<span class="op">=</span>rename_dict, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="1c53eb53" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 'cate_remove' 목록 정의</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cate_remove <span class="op">=</span> [<span class="st">'교통시설'</span>, <span class="st">'면세점'</span>, <span class="st">'백화점'</span>, <span class="st">'쇼핑몰'</span>, <span class="st">'대형마트'</span>, <span class="st">'기타쇼핑시설'</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 각 연도별 데이터에서 'cate_remove' 목록에 해당하는 카테고리를 제거</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>tour_2018 <span class="op">=</span> tour_2018[<span class="op">~</span>tour_2018[<span class="st">'category_s'</span>].isin(cate_remove)]</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>tour_2019 <span class="op">=</span> tour_2019[<span class="op">~</span>tour_2019[<span class="st">'category_s'</span>].isin(cate_remove)]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>tour_2020 <span class="op">=</span> tour_2020[<span class="op">~</span>tour_2020[<span class="st">'category_s'</span>].isin(cate_remove)]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>tour_2021 <span class="op">=</span> tour_2021[<span class="op">~</span>tour_2021[<span class="st">'category_s'</span>].isin(cate_remove)]</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>tour_2022 <span class="op">=</span> tour_2022[<span class="op">~</span>tour_2022[<span class="st">'category_s'</span>].isin(cate_remove)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="caf9f35f" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 각 데이터프레임에 연도 열 추가</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tour_2018[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2018</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tour_2019[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2019</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>tour_2020[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2020</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>tour_2021[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2021</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>tour_2022[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2022</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cde566be" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터 결합</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tours <span class="op">=</span> [tour_2018, tour_2019, tour_2020, tour_2021, tour_2022]</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>tour_total <span class="op">=</span> pd.concat(tours, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 불필요한 열 삭제</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>tour_total.drop(columns<span class="op">=</span>[<span class="st">'address'</span>, <span class="st">'ranking'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="7f33ee3d" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 'combined_city' 열 추가</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tour_total[<span class="st">'combined_city'</span>] <span class="op">=</span> tour_total[<span class="st">'state'</span>] <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> tour_total[<span class="st">'city'</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 결과 저장</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>tour_total.to_excel(<span class="st">'total_tour.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 결과 확인</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>tour_total.info()</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tour_total.head())  <span class="co"># 상위 40개 행 출력</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tour_total[<span class="st">'category_s'</span>].unique())  <span class="co"># 카테고리 확인</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1373 entries, 0 to 1372
+Data columns (total 8 columns):
+ #   Column         Non-Null Count  Dtype 
+---  ------         --------------  ----- 
+ 0   state          1373 non-null   object
+ 1   city           1373 non-null   object
+ 2   spot           1373 non-null   object
+ 3   category_m     1373 non-null   object
+ 4   category_s     1373 non-null   object
+ 5   search_count   1373 non-null   int64 
+ 6   year           1373 non-null   int64 
+ 7   combined_city  1373 non-null   object
+dtypes: int64(2), object(6)
+memory usage: 85.9+ KB
+   state     city         spot category_m category_s  search_count  year  \
+0  서울특별시      강남구          코엑스       문화관광       전시시설        456473  2018   
+1    경기도  용인시 처인구         에버랜드       문화관광       테마공원        330266  2018   
+2  서울특별시      동작구      노량진수산시장         쇼핑         시장        251985  2018   
+3  서울특별시      송파구  가락동농수산물도매시장         쇼핑         시장        231899  2018   
+4  서울특별시      용산구   CGV용산아이파크몰       문화관광       공연시설        227562  2018   
+
+  combined_city  
+0     서울특별시 강남구  
+1   경기도 용인시 처인구  
+2     서울특별시 동작구  
+3     서울특별시 송파구  
+4     서울특별시 용산구  
+['전시시설' '테마공원' '시장' '공연시설' '자연경관(하천/해양)' '역사유적지' '도시공원' '기타문화관광지' '기타관광'
+ '종교성지' '자연생태' '레저스포츠시설' '랜드마크관광' '자연경관(산)' '복합관광시설' '자연공원' '육상레저스포츠'
+ '기타레저스포츠' '웰니스관광' '농/산/어촌체험' '자연관광(산)' '데이트코스' '수상레저스포츠']</code></pre>
+</div>
+</div>
+<div id="d9265a28" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> plt</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>tour_total <span class="op">=</span> pd.read_csv(<span class="st">'pre_data/total_tour.csv'</span>,  encoding <span class="op">=</span> <span class="st">'cp949'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>tour_total <span class="op">=</span> pd.read_csv(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/pre_data/total_tour.csv"</span>,encoding <span class="op">=</span> <span class="st">'cp949'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>tour_total.info()</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span><span class="st">'Malgun Gothic'</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span><span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_10844\3705749607.py:5: DtypeWarning:
+
+Columns (1,2,3,4,5,6,9) have mixed types. Specify dtype option on import or set low_memory=False.
+
+C:\Users\USER\AppData\Local\Temp\ipykernel_10844\3705749607.py:6: DtypeWarning:
+
+Columns (1,2,3,4,5,6,9) have mixed types. Specify dtype option on import or set low_memory=False.
+</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1048575 entries, 0 to 1048574
+Data columns (total 10 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   ranking        1373 non-null   float64
+ 1   state          1373 non-null   object 
+ 2   city           1373 non-null   object 
+ 3   spot           1373 non-null   object 
+ 4   address        1373 non-null   object 
+ 5   category_m     1373 non-null   object 
+ 6   category_s     1373 non-null   object 
+ 7   search_count   1373 non-null   float64
+ 8   year           1373 non-null   float64
+ 9   combined_city  1373 non-null   object 
+dtypes: float64(3), object(7)
+memory usage: 80.0+ MB</code></pre>
+</div>
+</div>
+<div id="2b3976b9" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top 3 순위 구하기</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>tour_total_rank <span class="op">=</span> tour_total.groupby(<span class="st">"spot"</span>)<span class="op">\</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                            .agg(mean <span class="op">=</span> (<span class="st">"search_count"</span>,<span class="st">"mean"</span>))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>tour_total_rank.sort_values([<span class="st">"mean"</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">## 각 연도별  TOP 10 관광지 구하기</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>ranking1 <span class="op">=</span> tour_total.query(<span class="st">"spot=='에버랜드'"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>ranking2 <span class="op">=</span> tour_total.query(<span class="st">"spot=='속초관광수산시장'"</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>ranking3 <span class="op">=</span> tour_total.query(<span class="st">"spot=='코엑스'"</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>plt.plot(ranking1[<span class="st">"year"</span>], ranking1[<span class="st">"search_count"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">"에버랜드"</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>plt.plot(ranking2[<span class="st">"year"</span>], ranking2[<span class="st">"search_count"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'속초관광수산시장'</span>)</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>plt.plot(ranking3[<span class="st">"year"</span>], ranking3[<span class="st">"search_count"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'코엑스'</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'상위 3개 관광지 5년 추이'</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'년도'</span>)</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'검색수'</span>)</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Spot'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.05</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">'upper left'</span>, prop<span class="op">=</span>{<span class="st">'size'</span>: <span class="dv">10</span>})</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="선아_files/figure-html/cell-8-output-1.png" width="654" height="469" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+<div id="9c1ffe9a" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 중분류 수정본</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tour_total["year"] = tour_total["year"].astype(int)</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Top 3 순위 구하기</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>tour_total_c <span class="op">=</span> tour_total.groupby(<span class="st">"category_m"</span>)<span class="op">\</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                            .agg(c_sum <span class="op">=</span> (<span class="st">"search_count"</span>,<span class="st">"sum"</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>tour_total_c.sort_values([<span class="st">"c_sum"</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 연도별</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>tour_total_c2 <span class="op">=</span> tour_total.groupby([<span class="st">"year"</span>,<span class="st">"category_m"</span>], as_index<span class="op">=</span><span class="va">False</span>)<span class="op">\</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                            .agg(category_sum <span class="op">=</span> (<span class="st">"search_count"</span>,<span class="st">"sum"</span>))</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>ranking4 <span class="op">=</span> tour_total_c2.query(<span class="st">"category_m=='쇼핑'"</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>ranking5 <span class="op">=</span> tour_total_c2.query(<span class="st">"category_m=='자연관광'"</span>)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>ranking6 <span class="op">=</span> tour_total_c2.query(<span class="st">"category_m=='문화관광'"</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>plt.plot(ranking4[<span class="st">"year"</span>], ranking4[<span class="st">"category_sum"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">"쇼핑"</span>)</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>plt.plot(ranking5[<span class="st">"year"</span>], ranking5[<span class="st">"category_sum"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'자연관광'</span>)</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>plt.plot(ranking6[<span class="st">"year"</span>], ranking6[<span class="st">"category_sum"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'문화관광'</span>)</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'2018~2022 관광지 중분류 Top3'</span>)</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'년도'</span>)</span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'검색수 (단위: 천만 회)'</span>)</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Spot'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.05</span>, <span class="dv">1</span>), loc<span class="op">=</span><span class="st">'upper left'</span>, prop<span class="op">=</span>{<span class="st">'size'</span>: <span class="dv">10</span>})</span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="선아_files/figure-html/cell-9-output-1.png" width="660" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
