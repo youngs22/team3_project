@@ -113,10 +113,7 @@ df.columns
 df.to_excel('pre_select.xlsx', index=False)
 
 ```
-<<<<<<< HEAD
-=======
--------------------------------------------------------------------------------
->>>>>>> 89e2936607d010c37f0cc73cbafe6fed5415e65e
+
 
 ## 년도별 여행지 선택 5순위
 
@@ -167,8 +164,7 @@ fig.show()
 
 ```
 
-<<<<<<< HEAD
-=======
+
 --------------------------------------------------------------------------------
 ## 여행을 선택하는 이유
 
@@ -195,76 +191,3 @@ plt.legend(fontsize='x-small',loc='center left')
 plt.show()
 
 ```
-
-## 여행지 고르는 이유 - 남자
-
-```{python}
-#남자
-male_2018 = df_2018[["item", "male"]].sort_values(by="item")
-male_2019 = df_2019[["item", "male"]].sort_values(by="item")
-male_2020 = df_2020[["item", "male"]].sort_values(by="item")
-male_2021 = df_2021[["item", "male"]].sort_values(by="item")
-male_2022 = df_2022[["item", "male"]].sort_values(by="item")
-
-male_All = pd.merge(male_2018, male_2019, how = 'left', on = 'item')
-male_All = pd.merge(male_All, male_2020, how = 'left', on = 'item', suffixes=('', '_2020'))
-male_All = pd.merge(male_All, male_2021, how = 'left', on = 'item', suffixes=('', '_2021'))
-male_All = pd.merge(male_All, male_2022, how = 'left', on = 'item', suffixes=('', '_2022'))
-
-
-# 각 연도별 열 이름 변경 (이미 올바르게 되어있다면 생략 가능)
-male_All.columns = ['item', 'male_2018', 'male_2019', 'male_2020', 'male_2021', 'male_2022']
-
-# 각 행의 총합을 계산하여 새로운 열에 추가합니다.
-male_All['total_male'] = male_All[['male_2018', 'male_2019', 'male_2020', 'male_2021', 'male_2022']].sum(axis=1)
-
-# 필요 없는 열 삭제 및 total_male 기준으로 정렬
-male_All = male_All.drop(columns=['male_2018', 'male_2019', 'male_2020', 'male_2021', 'male_2022']).sort_values(by='total_male', ascending=False)
-
-male_All.head()
-
-M = male_All.head().plot.bar(rot = 0, color='green', title='여행지 고르는 이유 순위 - 남자')
-M.set_xticklabels(['볼거리', '지명도', '이동거리', '여행시간', '동반자유형'])
-
-plt.show()
-plt.clf()
-
-
-```
-
-## 여행지 고르는 이유 - 여자
-
-```{python}
-
-# 여자 데이터 정렬
-female_2018 = df_2018[["item", "female"]].sort_values(by="item")
-female_2019 = df_2019[["item", "female"]].sort_values(by="item")
-female_2020 = df_2020[["item", "female"]].sort_values(by="item")
-female_2021 = df_2021[["item", "female"]].sort_values(by="item")
-female_2022 = df_2022[["item", "female"]].sort_values(by="item")
-
-# 데이터 병합
-female_All = pd.merge(female_2018, female_2019, how='left', on='item', suffixes=('_2018', '_2019'))
-female_All = pd.merge(female_All, female_2020, how='left', on='item')
-female_All = pd.merge(female_All, female_2021, how='left', on='item')
-female_All = pd.merge(female_All, female_2022, how='left', on='item')
-
-# 각 연도별 열 이름 변경 (필요한 경우)
-female_All.columns = ['item', 'female_2018', 'female_2019', 'female_2020', 'female_2021', 'female_2022']
-
-# 각 행의 총합을 계산하여 새로운 열에 추가합니다.
-female_All['total_female'] = female_All[['female_2018', 'female_2019', 'female_2020', 'female_2021', 'female_2022']].sum(axis=1)
-
-# 필요 없는 열 삭제 및 total_female 기준으로 내림차순 정렬
-female_All = female_All.drop(columns=['female_2018', 'female_2019', 'female_2020', 'female_2021', 'female_2022']).sort_values(by='total_female', ascending=False)
-
-F =female_All.head().plot.bar(rot = 0, color='blue', title='여행지 고르는 이유 순위 - 여자')
-F.set_xticklabels(['볼거리', '지명도', '여행시간', '이동거리', '음식'])
-
-plt.show()
-plt.clf()
-
-
-
-```
-=======
