@@ -124,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">서론</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./한결.html"> 
@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="전처리">전처리</h2>
 <section id="데이터-불러오기" class="level3">
 <h3 class="anchored" data-anchor-id="데이터-불러오기">데이터 불러오기</h3>
-<div id="99dee7bf" class="cell" data-execution_count="1">
+<div id="803b3e36" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="결측치-처리" class="level3">
 <h3 class="anchored" data-anchor-id="결측치-처리">결측치 처리</h3>
-<div id="c69423da" class="cell" data-execution_count="2">
+<div id="130c3e75" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 연도 결측치 처리</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>,<span class="st">"year"</span>] <span class="op">=</span> <span class="st">"2018"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>,<span class="st">"year"</span>] <span class="op">=</span> <span class="st">"2019"</span></span>
@@ -223,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 결측치 제거</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>route.replace(<span class="st">'-'</span>, np.nan, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_4192\4045614584.py:9: FutureWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_16584\4045614584.py:9: FutureWarning:
 
 Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
 </code></pre>
@@ -232,7 +232,7 @@ Downcasting behavior in `replace` is deprecated and will be removed in a future 
 </section>
 <section id="변수명-바꾸기" class="level3">
 <h3 class="anchored" data-anchor-id="변수명-바꾸기">변수명 바꾸기</h3>
-<div id="6fe40ff0" class="cell" data-execution_count="3">
+<div id="4e06b78e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수 영어로 변경</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.rename(columns <span class="op">=</span> {<span class="st">"시점"</span>:<span class="st">"year"</span>, <span class="st">"항목"</span>:<span class="st">"access_path"</span>, <span class="st">"소계"</span> : <span class="st">"total"</span>, <span class="st">"남자"</span> : <span class="st">"male"</span>, <span class="st">"여자"</span> : <span class="st">"female"</span>})</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -262,7 +262,7 @@ Downcasting behavior in `replace` is deprecated and will be removed in a future 
 </section>
 <section id="변수-합치기" class="level3">
 <h3 class="anchored" data-anchor-id="변수-합치기">변수 합치기</h3>
-<div id="5976c232" class="cell" data-execution_count="4">
+<div id="73c88e63" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 연령대</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"teens"</span>] <span class="op">=</span> route[<span class="st">"15~19세"</span>]   </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"young_adults"</span>] <span class="op">=</span> route[<span class="st">"20대"</span>] <span class="op">+</span> route[<span class="st">"30대"</span>]</span>
@@ -290,7 +290,7 @@ Downcasting behavior in `replace` is deprecated and will be removed in a future 
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"middle_adults"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"senior"</span>]        <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e03a6046" class="cell" data-execution_count="5">
+<div id="3a85d962" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#월급</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"l_sal"</span>] <span class="op">=</span> route[<span class="st">"100만원 미만"</span>] <span class="op">+</span> route[<span class="st">"100~200만원 미만"</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"m_sal"</span>] <span class="op">=</span> route[<span class="st">"200~300만원 미만"</span>] <span class="op">+</span> route[<span class="st">"300~400만원 미만"</span>] <span class="op">+</span> route[<span class="st">"400~500만원 미만"</span>]</span>
@@ -321,7 +321,7 @@ Downcasting behavior in `replace` is deprecated and will be removed in a future 
 </section>
 <section id="불필요한-열-없애기" class="level3">
 <h3 class="anchored" data-anchor-id="불필요한-열-없애기">불필요한 열 없애기</h3>
-<div id="8a22f7b6" class="cell" data-execution_count="6">
+<div id="7a0bfb50" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 나이</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.drop([<span class="st">'15~19세'</span>, <span class="st">'20대'</span>, <span class="st">'30대'</span>, <span class="st">'40대'</span>, <span class="st">'50대'</span>, <span class="st">'60대'</span>, <span class="st">'70세 이상'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -332,7 +332,7 @@ Downcasting behavior in `replace` is deprecated and will be removed in a future 
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                    </span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 월급                  </span></span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.drop([<span class="st">'100만원 미만'</span>, <span class="st">'100~200만원 미만'</span>, <span class="st">'200~300만원 미만'</span>, <span class="st">'300~400만원 미만'</span>, <span class="st">'400~500만원 미만'</span>,<span class="st">'500~600만원 미만'</span>, <span class="st">'600만원 이상'</span>, <span class="st">"무응답"</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>route.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>route.info() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 44 entries, 0 to 43
@@ -367,14 +367,14 @@ memory usage: 7.3+ KB</code></pre>
 </section>
 <section id="전처리한-데이터-파일-추출" class="level3">
 <h3 class="anchored" data-anchor-id="전처리한-데이터-파일-추출">전처리한 데이터 파일 추출</h3>
-<div id="265fd1c6" class="cell" data-execution_count="7">
+<div id="0821ac91" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>route.to_excel(<span class="st">'pre_route.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="개년-평균-경로-순위-막대그래프" class="level2">
 <h2 class="anchored" data-anchor-id="개년-평균-경로-순위-막대그래프">5개년 평균 경로 순위 막대그래프</h2>
-<div id="526846ca" class="cell" data-execution_count="8">
+<div id="002de18f" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -401,7 +401,7 @@ memory usage: 7.3+ KB</code></pre>
 <span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'5개년 평균 여행 정보 획득 경로'</span>,fontsize<span class="op">=</span><span class="dv">15</span>)</span>
 <span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_4192\2622033830.py:19: FutureWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_16584\2622033830.py:19: FutureWarning:
 
 
 
@@ -420,7 +420,7 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </section>
 <section id="연도별-정보-획득-경로-추이" class="level2">
 <h2 class="anchored" data-anchor-id="연도별-정보-획득-경로-추이">연도별 정보 획득 경로 추이</h2>
-<div id="0cdf9a2b" class="cell" data-execution_count="9">
+<div id="13a8c01d" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.ticker <span class="im">import</span> MaxNLocator</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>pre_route <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/pre_route.xlsx"</span>)</span>
