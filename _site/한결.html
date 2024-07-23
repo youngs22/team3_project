@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.54">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>이삭토스트 맛있조 - 2018-2022 5개년 연별 국내 여행 횟수 트랜드</title>
+<title>2018-2022 5개년 연별 국내 여행 횟수 트랜드 – 이삭토스트 맛있조</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -134,19 +134,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./한결.html" aria-current="page"> 
-<span class="menu-text">한결</span></a>
+<span class="menu-text">연별 국내 여행 횟수 트랜드</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./유나.html"> 
-<span class="menu-text">유나</span></a>
+<span class="menu-text">여행 정보 획득 경로</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./현주.html"> 
-<span class="menu-text">현주</span></a>
+<span class="menu-text">여행 선택 이유 1순위</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./선아.html"> 
-<span class="menu-text">선아</span></a>
+<span class="menu-text">지역별 관광지 검색 순위</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./결론.html"> 
@@ -154,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -177,7 +177,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#열columns의-파생변수-생성" id="toc-열columns의-파생변수-생성" class="nav-link" data-scroll-target="#열columns의-파생변수-생성">열(columns)의 파생변수 생성</a></li>
   <li><a href="#열columns-삭제" id="toc-열columns-삭제" class="nav-link" data-scroll-target="#열columns-삭제">열(columns) 삭제</a></li>
   <li><a href="#데이터-전처리-시-예상-결과" id="toc-데이터-전처리-시-예상-결과" class="nav-link" data-scroll-target="#데이터-전처리-시-예상-결과">데이터 전처리 시 예상 결과</a></li>
-  <li><a href="#데이터의-정보-확인하기---info-shape-head-tail-describe-이용" id="toc-데이터의-정보-확인하기---info-shape-head-tail-describe-이용" class="nav-link" data-scroll-target="#데이터의-정보-확인하기---info-shape-head-tail-describe-이용">데이터의 정보 확인하기 - info(), shape, head(), tail(), describe() 이용</a></li>
   <li><a href="#데이터-문제점-해결" id="toc-데이터-문제점-해결" class="nav-link" data-scroll-target="#데이터-문제점-해결">데이터 문제점 해결</a></li>
   <li><a href="#데이터-저장" id="toc-데이터-저장" class="nav-link" data-scroll-target="#데이터-저장">데이터 저장</a></li>
   </ul></li>
@@ -192,6 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#년도-부터-2020년도-까지-5년간-연령별-여행-횟수-증감의-트랜드-구하기" id="toc-년도-부터-2020년도-까지-5년간-연령별-여행-횟수-증감의-트랜드-구하기" class="nav-link" data-scroll-target="#년도-부터-2020년도-까지-5년간-연령별-여행-횟수-증감의-트랜드-구하기">1. 2018년도 부터 2020년도 까지 5년간 연령별 여행 횟수 증감의 트랜드 구하기</a></li>
   <li><a href="#년도-부터-2020년도-까지-5년간-가구원-수-별-여행-횟수-증감의-트랜드-구하기" id="toc-년도-부터-2020년도-까지-5년간-가구원-수-별-여행-횟수-증감의-트랜드-구하기" class="nav-link" data-scroll-target="#년도-부터-2020년도-까지-5년간-가구원-수-별-여행-횟수-증감의-트랜드-구하기">2. 2018년도 부터 2020년도 까지 5년간 가구원 수 별 여행 횟수 증감의 트랜드 구하기</a></li>
   </ul></li>
+  <li><a href="#결론" id="toc-결론" class="nav-link" data-scroll-target="#결론">결론</a></li>
   </ul>
 </nav>
     </div>
@@ -240,7 +240,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="data-preprocessing-데이터-전처리">Data Preprocessing : 데이터 전처리</h2>
 <section id="pandas와-numpy-라이브러리-호출" class="level3">
 <h3 class="anchored" data-anchor-id="pandas와-numpy-라이브러리-호출">pandas와 numpy 라이브러리 호출</h3>
+<<<<<<< HEAD
 <div id="c3bdce1f" class="cell" data-execution_count="1">
+=======
+<div id="6e048d65" class="cell" data-execution_count="1">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 라이브러리 호출</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -255,7 +259,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>전처리 이후 데이터 : pre_data 폴더의 p_num_trip.xlsx</p></li>
 </ul></li>
 </ul>
+<<<<<<< HEAD
 <div id="f041ceb8" class="cell" data-execution_count="2">
+=======
+<div id="6012a3a5" class="cell" data-execution_count="2">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># header를 두번째 행으로 고정, 첫번째 행에는 불필요한 정보가 들어있기 때문</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>num_trip <span class="op">=</span> pd.read_excel(<span class="st">'data/R_월별_국내여행_횟수_20240714204514.xlsx'</span>, header<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -263,7 +271,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="rename을-사용하여-열columns의-변수명-변경" class="level3">
 <h3 class="anchored" data-anchor-id="rename을-사용하여-열columns의-변수명-변경">rename()을 사용하여 열(columns)의 변수명 변경</h3>
+<<<<<<< HEAD
 <div id="d1e0795b" class="cell" data-execution_count="3">
+=======
+<div id="a3cde810" class="cell" data-execution_count="3">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 시점</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>num_trip <span class="op">=</span> num_trip.rename(columns <span class="op">=</span> { <span class="st">'시점'</span> : <span class="st">'year'</span>, <span class="st">'항목'</span> : <span class="st">'month'</span>})</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -289,7 +301,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="열columns의-파생변수-생성">열(columns)의 파생변수 생성</h3>
 <section id="연령---1519세-20대-30대-40대-50대-60대-70세-이상을-청소년-청년-중년-노년-층으로-구분" class="level4">
 <h4 class="anchored" data-anchor-id="연령---1519세-20대-30대-40대-50대-60대-70세-이상을-청소년-청년-중년-노년-층으로-구분">연령 - 15~19세, 20대, 30대, 40대, 50대, 60대, 70세 이상을 청소년, 청년, 중년, 노년 층으로 구분</h4>
+<<<<<<< HEAD
 <div id="66b6aa5e" class="cell" data-execution_count="4">
+=======
+<div id="f513c064" class="cell" data-execution_count="4">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">"teens"</span>] <span class="op">=</span> num_trip[<span class="st">"15~19세"</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">"young_adults"</span>] <span class="op">=</span> num_trip[<span class="st">"20대"</span>] <span class="op">+</span> num_trip[<span class="st">"30대"</span>]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">"middle_adults"</span>] <span class="op">=</span> num_trip[<span class="st">"40대"</span>] <span class="op">+</span> num_trip[<span class="st">"50대"</span>]</span>
@@ -300,7 +316,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="drop을-사용하여-기존의-연령-열-삭제">drop()을 사용하여 기존의 연령 열 삭제</h4>
 <section id="np.arrange를-사용하여-columns의-index-지정5121-총-1519세-20대-30대-40대-50대-60대-70세-이상-열-7개-삭제" class="level5">
 <h5 class="anchored" data-anchor-id="np.arrange를-사용하여-columns의-index-지정5121-총-1519세-20대-30대-40대-50대-60대-70세-이상-열-7개-삭제">np.arrange를 사용하여 columns의 index 지정(5,12,1) 총 15~19세, 20대, 30대, 40대, 50대, 60대, 70세 이상 열 7개 삭제</h5>
+<<<<<<< HEAD
 <div id="4d60e458" class="cell" data-execution_count="5">
+=======
+<div id="c049483d" class="cell" data-execution_count="5">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 15~19세, 20대, 30대, 40대, 50대, 60대, 70세 이상 열 7개 삭제</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>num_trip <span class="op">=</span> num_trip.drop(num_trip.columns[np.arange(<span class="dv">5</span>,<span class="dv">12</span>,<span class="dv">1</span>)], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -310,7 +330,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="가구-소득">가구 소득</h4>
 <section id="저소득-200-만원-중위소득-200500-만원-고소득-500600이상-무응답" class="level5">
 <h5 class="anchored" data-anchor-id="저소득-200-만원-중위소득-200500-만원-고소득-500600이상-무응답">저소득 ~ 200 만원 / 중위소득 200~500 만원 / 고소득 500~600이상 / 무응답</h5>
+<<<<<<< HEAD
 <div id="8ac1dac6" class="cell" data-execution_count="6">
+=======
+<div id="f49fda74" class="cell" data-execution_count="6">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">"l_sal"</span>] <span class="op">=</span> num_trip[<span class="st">"100만원 미만"</span>]     <span class="op">+</span> num_trip[<span class="st">"100~200만원 미만"</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">"m_sal"</span>] <span class="op">=</span> num_trip[<span class="st">"200~300만원 미만"</span>] <span class="op">+</span> num_trip[<span class="st">"300~400만원 미만"</span>] <span class="op">+</span> num_trip[<span class="st">"400~500만원 미만"</span>]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">"h_sal"</span>] <span class="op">=</span> num_trip[<span class="st">"500~600만원 미만"</span>] <span class="op">+</span> num_trip[<span class="st">"600만원 이상"</span>]</span>
@@ -322,7 +346,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="drop을-사용하여-기존의-가구-소득-열-삭제">drop()을 사용하여 기존의 가구 소득 열 삭제</h4>
 <section id="np.arrange를-사용하여-columns의-index-지정24321-총-100만원-미만-100200만원-미만-200300만원-미만-300400만원-미만-400500만원-미만-500600만원-미만-600만원-이상-무응답-총-8열-삭제" class="level5">
 <h5 class="anchored" data-anchor-id="np.arrange를-사용하여-columns의-index-지정24321-총-100만원-미만-100200만원-미만-200300만원-미만-300400만원-미만-400500만원-미만-500600만원-미만-600만원-이상-무응답-총-8열-삭제">np.arrange를 사용하여 columns의 index 지정(24,32,1) 총 100만원 미만, 100~200만원 미만, 200~300만원 미만, 300~400만원 미만, 400~500만원 미만, 500~600만원 미만, 600만원 이상, 무응답 총 8열 삭제</h5>
+<<<<<<< HEAD
 <div id="e7b59739" class="cell" data-execution_count="7">
+=======
+<div id="578172ed" class="cell" data-execution_count="7">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>num_trip <span class="op">=</span> num_trip.drop(num_trip.columns[np.arange(<span class="dv">24</span>,<span class="dv">32</span>,<span class="dv">1</span>)], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
@@ -336,7 +364,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="drop과-np.arrange를-사용하여-columns의-index-지정5171" class="level5">
 <h5 class="anchored" data-anchor-id="drop과-np.arrange를-사용하여-columns의-index-지정5171">drop()과 np.arrange를 사용하여 columns의 index 지정(5,17,1)</h5>
+<<<<<<< HEAD
 <div id="900f820d" class="cell" data-execution_count="8">
+=======
+<div id="4522e35f" class="cell" data-execution_count="8">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>num_trip <span class="op">=</span> num_trip.drop(num_trip.columns[np.arange(<span class="dv">5</span>,<span class="dv">17</span>,<span class="dv">1</span>)], axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
@@ -352,6 +384,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 </section>
+<<<<<<< HEAD
 <section id="데이터의-정보-확인하기---info-shape-head-tail-describe-이용" class="level3">
 <h3 class="anchored" data-anchor-id="데이터의-정보-확인하기---info-shape-head-tail-describe-이용">데이터의 정보 확인하기 - info(), shape, head(), tail(), describe() 이용</h3>
 <div id="110b691d" class="cell" data-execution_count="9">
@@ -1229,10 +1262,13 @@ memory usage: 9.5+ KB</code></pre>
 </div>
 <hr>
 </section>
+=======
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <section id="데이터-문제점-해결" class="level3">
 <h3 class="anchored" data-anchor-id="데이터-문제점-해결">데이터 문제점 해결</h3>
 <section id="year의-nan값을-채워야함" class="level4">
 <h4 class="anchored" data-anchor-id="year의-nan값을-채워야함">1. year의 NaN값을 채워야함</h4>
+<<<<<<< HEAD
 <div id="91e80259" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># year의 null값 index 범위를 지정하고 2018, 2019, 2020, 2021, 2022 값 할당</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">'year'</span>][<span class="dv">1</span> :<span class="dv">12</span>] <span class="op">=</span> <span class="dv">2018</span></span>
@@ -1255,12 +1291,24 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 
 C:\Users\USER\AppData\Local\Temp\ipykernel_19092\870468280.py:2: SettingWithCopyWarning:
+=======
+<div id="ebdc0a45" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># year의 null값 index 범위를 지정하고 2018, 2019, 2020, 2021, 2022 값 할당</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">'year'</span>][<span class="dv">1</span> :<span class="dv">12</span>] <span class="op">=</span> <span class="dv">2018</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">'year'</span>][<span class="dv">13</span>:<span class="dv">24</span>] <span class="op">=</span> <span class="dv">2019</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">'year'</span>][<span class="dv">25</span>:<span class="dv">36</span>] <span class="op">=</span> <span class="dv">2020</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">'year'</span>][<span class="dv">37</span>:<span class="dv">48</span>] <span class="op">=</span> <span class="dv">2021</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">'year'</span>][<span class="dv">49</span>:<span class="dv">60</span>] <span class="op">=</span> <span class="dv">2022</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_21764\870468280.py:2: SettingWithCopyWarning:
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 
 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
+<<<<<<< HEAD
 C:\Users\USER\AppData\Local\Temp\ipykernel_19092\870468280.py:3: FutureWarning:
 
 ChainedAssignmentError: behaviour will change in pandas 3.0!
@@ -1275,12 +1323,16 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 
 C:\Users\USER\AppData\Local\Temp\ipykernel_19092\870468280.py:3: SettingWithCopyWarning:
+=======
+C:\Users\USER\AppData\Local\Temp\ipykernel_21764\870468280.py:3: SettingWithCopyWarning:
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 
 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
+<<<<<<< HEAD
 C:\Users\USER\AppData\Local\Temp\ipykernel_19092\870468280.py:4: FutureWarning:
 
 ChainedAssignmentError: behaviour will change in pandas 3.0!
@@ -1295,12 +1347,16 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 
 C:\Users\USER\AppData\Local\Temp\ipykernel_19092\870468280.py:4: SettingWithCopyWarning:
+=======
+C:\Users\USER\AppData\Local\Temp\ipykernel_21764\870468280.py:4: SettingWithCopyWarning:
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 
 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
+<<<<<<< HEAD
 C:\Users\USER\AppData\Local\Temp\ipykernel_19092\870468280.py:5: FutureWarning:
 
 ChainedAssignmentError: behaviour will change in pandas 3.0!
@@ -1315,12 +1371,16 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 
 C:\Users\USER\AppData\Local\Temp\ipykernel_19092\870468280.py:5: SettingWithCopyWarning:
+=======
+C:\Users\USER\AppData\Local\Temp\ipykernel_21764\870468280.py:5: SettingWithCopyWarning:
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 
 
 A value is trying to be set on a copy of a slice from a DataFrame
 
 See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
 
+<<<<<<< HEAD
 C:\Users\USER\AppData\Local\Temp\ipykernel_19092\870468280.py:6: FutureWarning:
 
 ChainedAssignmentError: behaviour will change in pandas 3.0!
@@ -1335,6 +1395,9 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 
 
 C:\Users\USER\AppData\Local\Temp\ipykernel_19092\870468280.py:6: SettingWithCopyWarning:
+=======
+C:\Users\USER\AppData\Local\Temp\ipykernel_21764\870468280.py:6: SettingWithCopyWarning:
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 
 
 A value is trying to be set on a copy of a slice from a DataFrame
@@ -1346,28 +1409,49 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </section>
 <section id="month의-type을-object에서-int로-형-변환-필요" class="level4">
 <h4 class="anchored" data-anchor-id="month의-type을-object에서-int로-형-변환-필요">2. month의 type을 object에서 int로 형 변환 필요</h4>
+<<<<<<< HEAD
 <div id="d8af5f74" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># str.replace()를 사용해서 맨 마지막 글자인 '월'을 ''로 변경</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># astype('int')를 사용하여 int값으로 형 변환</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">'month'</span>] <span class="op">=</span> num_trip[<span class="st">'month'</span>].<span class="bu">str</span>.replace(<span class="st">'월'</span>,<span class="st">''</span>)</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">'month'</span>] <span class="op">=</span> num_trip[<span class="st">'month'</span>].astype(<span class="st">'int'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="72738367" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># str.replace()를 사용해서 맨 마지막 글자인 '월'을 ''로 변경</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># astype('int')를 사용하여 int값으로 형 변환</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">'month'</span>] <span class="op">=</span> num_trip[<span class="st">'month'</span>].<span class="bu">str</span>.replace(<span class="st">'월'</span>,<span class="st">''</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>num_trip[<span class="st">'month'</span>] <span class="op">=</span> num_trip[<span class="st">'month'</span>].astype(<span class="st">'int'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 </div>
 </section>
 <section id="nr월급-미-응답자-columns의-nan값이--로-대응되어-있음" class="level4">
 <h4 class="anchored" data-anchor-id="nr월급-미-응답자-columns의-nan값이--로-대응되어-있음">3. nr(월급 미 응답자) columns의 NaN값이 ’-’로 대응되어 있음</h4>
+<<<<<<< HEAD
 <div id="3398ae9b" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loc을 사용하여 nr 컬럼의 값이 "-"인 nr열의 값에 np.nan을 할당</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>num_trip.loc[num_trip[<span class="st">"nr"</span>] <span class="op">==</span> <span class="st">"-"</span>, [<span class="st">"nr"</span>]] <span class="op">=</span> np.nan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="843a793e" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># loc을 사용하여 nr 컬럼의 값이 "-"인 nr열의 값에 np.nan을 할당</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>num_trip.loc[num_trip[<span class="st">"nr"</span>] <span class="op">==</span> <span class="st">"-"</span>, [<span class="st">"nr"</span>]] <span class="op">=</span> np.nan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 </div>
 <hr>
 </section>
 </section>
 <section id="데이터-저장" class="level3">
 <h3 class="anchored" data-anchor-id="데이터-저장">데이터 저장</h3>
+<<<<<<< HEAD
 <div id="d9ace1ef" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># to_excel()을 사용하여 DataFrame을 xlsx파일 형태로 저장</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co"># index=False : Unnamed: 0 이라는 임의의 인덱스가 생성되는 것을 방지</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>num_trip.to_excel(excel_writer <span class="op">=</span> <span class="st">'pre_data/p_num_trip.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="de39e013" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># to_excel()을 사용하여 DataFrame을 xlsx파일 형태로 저장</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># index=False : Unnamed: 0 이라는 임의의 인덱스가 생성되는 것을 방지</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>num_trip.to_excel(excel_writer <span class="op">=</span> <span class="st">'pre_data/p_num_trip.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 </div>
 <hr>
 </section>
@@ -1376,23 +1460,41 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 <h2 class="anchored" data-anchor-id="data-visualization-데이터-시각화">Data Visualization : 데이터 시각화</h2>
 <section id="pandas와-numpy-라이브러리-호출-1" class="level3">
 <h3 class="anchored" data-anchor-id="pandas와-numpy-라이브러리-호출-1">pandas와 numpy 라이브러리 호출</h3>
+<<<<<<< HEAD
 <div id="3427a037" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 라이브러리 호출</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="fab1f387" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 라이브러리 호출</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 </div>
 </section>
 <section id="pd.read_excel을-사용해-전처리-된-데이터-불러오기" class="level3">
 <h3 class="anchored" data-anchor-id="pd.read_excel을-사용해-전처리-된-데이터-불러오기">pd.read_excel()을 사용해 전처리 된 데이터 불러오기</h3>
+<<<<<<< HEAD
 <div id="74dabd70" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 전처리 된 데이터 불러오기</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>p_num_trip <span class="op">=</span> pd.read_excel(<span class="st">'pre_data/p_num_trip.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="2fee5b14" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 전처리 된 데이터 불러오기</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>p_num_trip <span class="op">=</span> pd.read_excel(<span class="st">'pre_data/p_num_trip.xlsx'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 </div>
 </section>
 <section id="p_num_trip.xlsx-데이터의-정보-확인하기---info-shape-head-tail-describe-이용" class="level3">
 <h3 class="anchored" data-anchor-id="p_num_trip.xlsx-데이터의-정보-확인하기---info-shape-head-tail-describe-이용">p_num_trip.xlsx 데이터의 정보 확인하기 - info(), shape, head(), tail(), describe() 이용</h3>
+<<<<<<< HEAD
 <div id="bf9fa591" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>p_num_trip.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="3542ef18" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>p_num_trip.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 60 entries, 0 to 59
@@ -1423,6 +1525,7 @@ dtypes: float64(1), int64(19)
 memory usage: 9.5 KB</code></pre>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="a3129dc4" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>p_num_trip.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="79">
@@ -1432,6 +1535,17 @@ memory usage: 9.5 KB</code></pre>
 <div id="8c277bda" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>p_num_trip.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="80">
+=======
+<div id="7787183b" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>p_num_trip.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>(60, 20)</code></pre>
+</div>
+</div>
+<div id="1a3992bf" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>p_num_trip.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div>
 
 
@@ -1583,9 +1697,15 @@ memory usage: 9.5 KB</code></pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="bc0c767d" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>p_num_trip.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="81">
+=======
+<div id="53c9ef6b" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>p_num_trip.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div>
 
 
@@ -1737,9 +1857,15 @@ memory usage: 9.5 KB</code></pre>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
 <div id="9ad1361c" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>p_num_trip.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="82">
+=======
+<div id="99e85e33" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>p_num_trip.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div>
 
 
@@ -1963,30 +2089,51 @@ memory usage: 9.5 KB</code></pre>
 </section>
 <section id="분석을-용이하게-하기-위해-query를-사용하여-각-년도별-행을-추출하여-dataframe생성" class="level3">
 <h3 class="anchored" data-anchor-id="분석을-용이하게-하기-위해-query를-사용하여-각-년도별-행을-추출하여-dataframe생성">분석을 용이하게 하기 위해 query()를 사용하여 각 년도별 행을 추출하여 DataFrame생성</h3>
+<<<<<<< HEAD
 <div id="01ccd2f9" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>y2018 <span class="op">=</span> p_num_trip.query(<span class="st">'year == 2018'</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>y2019 <span class="op">=</span> p_num_trip.query(<span class="st">'year == 2019'</span>)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>y2020 <span class="op">=</span> p_num_trip.query(<span class="st">'year == 2020'</span>)</span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>y2021 <span class="op">=</span> p_num_trip.query(<span class="st">'year == 2021'</span>)</span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>y2022 <span class="op">=</span> p_num_trip.query(<span class="st">'year == 2022'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="e2b1e5ff" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>y2018 <span class="op">=</span> p_num_trip.query(<span class="st">'year == 2018'</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y2019 <span class="op">=</span> p_num_trip.query(<span class="st">'year == 2019'</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>y2020 <span class="op">=</span> p_num_trip.query(<span class="st">'year == 2020'</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>y2021 <span class="op">=</span> p_num_trip.query(<span class="st">'year == 2021'</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>y2022 <span class="op">=</span> p_num_trip.query(<span class="st">'year == 2022'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 </div>
 <hr>
 </section>
 <section id="그래프를-그리기-위해-matplotlib.pyplot-라이브러리-호출" class="level3">
 <h3 class="anchored" data-anchor-id="그래프를-그리기-위해-matplotlib.pyplot-라이브러리-호출">그래프를 그리기 위해 matplotlib.pyplot 라이브러리 호출</h3>
+<<<<<<< HEAD
 <div id="5a417be6" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="f51593d4" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 </div>
 </section>
 <section id="그래프에-한글과-언더바_-표시가-가능하게-하기-위해-rcparamsruntime-configuration-딕셔너리-설정" class="level3">
 <h3 class="anchored" data-anchor-id="그래프에-한글과-언더바_-표시가-가능하게-하기-위해-rcparamsruntime-configuration-딕셔너리-설정">그래프에 한글과 언더바(_) 표시가 가능하게 하기 위해 rcParams(runtime configuration) 딕셔너리 설정</h3>
+<<<<<<< HEAD
 <div id="1b21ae85" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span><span class="st">'Malgun Gothic'</span></span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span><span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="4b6a8f13" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span><span class="st">'Malgun Gothic'</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span><span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 </div>
 </section>
 <section id="년도-부터-2020년도-까지-5년간-연령별-여행-횟수-증감의-트랜드-구하기" class="level3">
 <h3 class="anchored" data-anchor-id="년도-부터-2020년도-까지-5년간-연령별-여행-횟수-증감의-트랜드-구하기">1. 2018년도 부터 2020년도 까지 5년간 연령별 여행 횟수 증감의 트랜드 구하기</h3>
+<<<<<<< HEAD
 <div id="e6367323" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 그래프의 x축과 y축의 데이터 값 만들기</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for x in range 구문을 이용하여 다음과 같은 반복문을 실행, 년간 연령대 별 여행 횟수의 합을 구하는 것을 2018년부터 2022년까지 반복한다.</span></span>
@@ -2023,10 +2170,48 @@ memory usage: 9.5 KB</code></pre>
 <span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a><span class="co"># 그래프 보여주기</span></span>
 <span id="cb33-34"><a href="#cb33-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb33-35"><a href="#cb33-35" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="ca034003" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 그래프의 x축과 y축의 데이터 값 만들기</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for x in range 구문을 이용하여 다음과 같은 반복문을 실행, 년간 연령대 별 여행 횟수의 합을 구하는 것을 2018년부터 2022년까지 반복한다.</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>teens_total <span class="op">=</span> [x[<span class="st">'teens'</span>].<span class="bu">sum</span>() <span class="cf">for</span> x <span class="kw">in</span> [y2018, y2019, y2020, y2021, y2022]]</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>young_adults_total <span class="op">=</span> [x[<span class="st">'young_adults'</span>].<span class="bu">sum</span>() <span class="cf">for</span> x <span class="kw">in</span> [y2018, y2019, y2020, y2021, y2022]]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>middle_adults_total <span class="op">=</span> [x[<span class="st">'middle_adults'</span>].<span class="bu">sum</span>() <span class="cf">for</span> x <span class="kw">in</span> [y2018, y2019, y2020, y2021, y2022]]</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>seniors_adults_total <span class="op">=</span> [x[<span class="st">'seniors'</span>].<span class="bu">sum</span>() <span class="cf">for</span> x <span class="kw">in</span> [y2018, y2019, y2020, y2021, y2022]]</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> [<span class="dv">2018</span>,<span class="dv">2019</span>,<span class="dv">2020</span>,<span class="dv">2021</span>,<span class="dv">2022</span>]</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># title(), ylabel(), xlabel()을 사용하여 그래프의 제목과 x, y축 레이블 설정</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"2018년 ~ 2022년 연령대 별 여행 횟수"</span>)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"단위 : 천회"</span>)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"단위 : 년"</span>)</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 그래프 그리기</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="co"># x_range : year의 길이 만큼 x축의 범위를 설정</span></span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="co"># x_range + c : 그래프가 그려지는 위치값을 조절</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="co"># width : 그래프의 너비 설정</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="co"># label : 범례 표시</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="co"># color : 그래프의 색상 표시</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>x_range <span class="op">=</span> np.arange(<span class="bu">len</span>(years))</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>plt.bar(x_range<span class="op">+</span><span class="fl">0.0</span>, teens_total, width<span class="op">=</span><span class="fl">0.2</span>, label<span class="op">=</span><span class="st">'청소년(15~19세)'</span>, color <span class="op">=</span> <span class="st">'lawngreen'</span>)</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>plt.bar(x_range<span class="op">+</span><span class="fl">0.2</span>, young_adults_total, width<span class="op">=</span><span class="fl">0.2</span>, label<span class="op">=</span><span class="st">'청년(2~30대)'</span>, color <span class="op">=</span> <span class="st">'blue'</span>)</span>
+<span id="cb26-23"><a href="#cb26-23" aria-hidden="true" tabindex="-1"></a>plt.bar(x_range<span class="op">+</span><span class="fl">0.4</span>, middle_adults_total, width<span class="op">=</span><span class="fl">0.2</span>, label<span class="op">=</span><span class="st">'중년(4~50대)'</span>, color <span class="op">=</span> <span class="st">'red'</span>)</span>
+<span id="cb26-24"><a href="#cb26-24" aria-hidden="true" tabindex="-1"></a>plt.bar(x_range<span class="op">+</span><span class="fl">0.6</span>, seniors_adults_total, width<span class="op">=</span><span class="fl">0.2</span>, label<span class="op">=</span><span class="st">'노년(6~70대 이상)'</span>, color <span class="op">=</span> <span class="st">'gray'</span>)</span>
+<span id="cb26-25"><a href="#cb26-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-26"><a href="#cb26-26" aria-hidden="true" tabindex="-1"></a><span class="co"># x축 눈금 설정</span></span>
+<span id="cb26-27"><a href="#cb26-27" aria-hidden="true" tabindex="-1"></a><span class="co"># x_ticks()을 사용하여 x_range(0~0.6)의 중간(0.3)으로 눈금의 위치를 옮기고, 각 해당 위치에 해당하는 레이블을 years로 지정하여 년도가 함께 표시되도록 지정</span></span>
+<span id="cb26-28"><a href="#cb26-28" aria-hidden="true" tabindex="-1"></a>plt.xticks(x_range<span class="op">+</span><span class="fl">0.3</span>, years)</span>
+<span id="cb26-29"><a href="#cb26-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-30"><a href="#cb26-30" aria-hidden="true" tabindex="-1"></a><span class="co"># legend()를 사용하여 범례 추가</span></span>
+<span id="cb26-31"><a href="#cb26-31" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb26-32"><a href="#cb26-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-33"><a href="#cb26-33" aria-hidden="true" tabindex="-1"></a><span class="co"># 그래프 보여주기</span></span>
+<span id="cb26-34"><a href="#cb26-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb26-35"><a href="#cb26-35" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="한결_files/figure-html/cell-29-output-1.png" width="612" height="449" class="figure-img"></p>
+<p><img src="한결_files/figure-html/cell-24-output-1.png" width="612" height="449" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2038,6 +2223,7 @@ memory usage: 9.5 KB</code></pre>
 </section>
 <section id="년도-부터-2020년도-까지-5년간-가구원-수-별-여행-횟수-증감의-트랜드-구하기" class="level3">
 <h3 class="anchored" data-anchor-id="년도-부터-2020년도-까지-5년간-가구원-수-별-여행-횟수-증감의-트랜드-구하기">2. 2018년도 부터 2020년도 까지 5년간 가구원 수 별 여행 횟수 증감의 트랜드 구하기</h3>
+<<<<<<< HEAD
 <div id="be46a133" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 그래프의 x축과 y축의 데이터 값 만들기</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for x in range 구문을 이용하여 다음과 같은 반복문을 실행, 년간 가구원 수 별 여행 횟수의 합을 구하는 것을 2018년부터 2022년까지 반복한다.</span></span>
@@ -2072,10 +2258,46 @@ memory usage: 9.5 KB</code></pre>
 <span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 그래프 보여주기</span></span>
 <span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+=======
+<div id="93f52018" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 그래프의 x축과 y축의 데이터 값 만들기</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># for x in range 구문을 이용하여 다음과 같은 반복문을 실행, 년간 가구원 수 별 여행 횟수의 합을 구하는 것을 2018년부터 2022년까지 반복한다.</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>per1_total <span class="op">=</span> [x[<span class="st">'per1'</span>].<span class="bu">sum</span>() <span class="cf">for</span> x <span class="kw">in</span> [y2018, y2019, y2020, y2021, y2022]]</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>per2_total <span class="op">=</span> [x[<span class="st">'per2'</span>].<span class="bu">sum</span>() <span class="cf">for</span> x <span class="kw">in</span> [y2018, y2019, y2020, y2021, y2022]]</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>per3_total <span class="op">=</span> [x[<span class="st">'per3+'</span>].<span class="bu">sum</span>() <span class="cf">for</span> x <span class="kw">in</span> [y2018, y2019, y2020, y2021, y2022]]</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> [<span class="dv">2018</span>,<span class="dv">2019</span>,<span class="dv">2020</span>,<span class="dv">2021</span>,<span class="dv">2022</span>]</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="co"># title(), ylabel(), xlabel()을 사용하여 그래프의 제목과 x, y축 레이블 설정</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"2018년 ~ 2022년 가구원 수 별 여행 횟수"</span>)</span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"단위 : 천회"</span>)</span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"단위 : 년"</span>)</span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 그래프 그리기</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co"># x_range : year의 길이 만큼 x축의 범위를 설정</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co"># x_range + c : 그래프가 그려지는 위치값을 조절</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co"># width : 그래프의 너비 설정</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="co"># label : 범례 표시</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co"># color : 그래프의 색상 표시</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>x_range <span class="op">=</span> np.arange(<span class="bu">len</span>(years))</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>plt.bar(x_range<span class="op">+</span><span class="fl">0.0</span>, per1_total, width<span class="op">=</span><span class="fl">0.2</span>, label<span class="op">=</span><span class="st">'1인 가구'</span>, color <span class="op">=</span> <span class="st">'slateblue'</span>)</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>plt.bar(x_range<span class="op">+</span><span class="fl">0.2</span>, per2_total, width<span class="op">=</span><span class="fl">0.2</span>, label<span class="op">=</span><span class="st">'2인 가구'</span>, color <span class="op">=</span> <span class="st">'coral'</span>)</span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>plt.bar(x_range<span class="op">+</span><span class="fl">0.4</span>, per3_total, width<span class="op">=</span><span class="fl">0.2</span>, label<span class="op">=</span><span class="st">'3인 이상 가구'</span>, color <span class="op">=</span> <span class="st">'teal'</span>)</span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="co"># x축 눈금 설정</span></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="co"># x_ticks()을 사용하여 x_range(0~0.4)의 중간(0.2)으로 눈금의 위치를 옮기고, 각 해당 위치에 해당하는 레이블을 years로 지정하여 년도가 함께 표시되도록 지정</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a>plt.xticks(x_range<span class="op">+</span><span class="fl">0.2</span>, years) </span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 범례추가</span></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 그래프 보여주기</span></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a>plt.clf()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="한결_files/figure-html/cell-30-output-1.png" width="612" height="449" class="figure-img"></p>
+<p><img src="한결_files/figure-html/cell-25-output-1.png" width="612" height="449" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -2083,9 +2305,17 @@ memory usage: 9.5 KB</code></pre>
 <pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="결론" class="level2">
+<h2 class="anchored" data-anchor-id="결론">결론</h2>
+<ol type="1">
+<li>2020년 모든 연령대 및 가구원에서 여행 횟수가 감소했음, 이는 코로나의 영향으로 보임. 2021년과 2022년에는 여행 횟수가 증가하는 경향을 보였으나 여전히 2019년 수준에 미치지 못함</li>
+<li>2018 ~ 2022 총 5년간 중년(4-50)대의 여행 횟수가 가장 많고, 청년(2-30대)과 노년(6-70)대가 그 뒤를 따르며 청소년이 가장 낮은 여행 횟수를 가짐.</li>
+<li>2018 ~ 2022 총 5년간 모든 년도에서 3인이상 가구 유형의 여행 횟수가 가장 많으며, 2인 가구와 1인가구가 그 뒤를 따름</li>
+</ol>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -2124,18 +2354,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2167,7 +2386,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -2175,7 +2416,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

@@ -4,7 +4,9 @@ jupyter: python3
 ---
 
 ## 전처리
+
 ### 파일 불러오기 및 변수 변경
+
 ```{python}
 
 import numpy as np
@@ -14,6 +16,10 @@ import matplotlib.pyplot as plt
 # 파일 불러오기
 df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx")
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> eaac52da361298b09f7c74978f59c40e097c864a
 df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx")
 df = pd.read_excel("./data/select.xlsx")
 df.head()
@@ -24,8 +30,8 @@ df.head()
 
 ```
 
-
 ### 연령대 변수 추가 및 삭제
+
 ```{python}
 # 연령대
 df["teens"] = df["15~19세"]
@@ -58,6 +64,7 @@ df = df.drop(['15~19세', '20대', '30대', '40대', '50대', '60대', '70세 �
 ```
 
 ### 월급 변수 추가 및 삭제
+
 ```{python}
 df["l_sal"] = df["100만원 미만"] + df["100~200만원 미만"]
 df["m_sal"] = df["200~300만원 미만"] + df["300~400만원 미만"] + df["400~500만원 미만"]
@@ -90,6 +97,7 @@ df = df.drop(['100만원 미만', '100~200만원 미만', '200~300만원 미만'
 ```
 
 ### 가구, 학벌, 무응답 rename
+
 ```{python}
 # 가구
 df = df.rename(columns = { '1인' : 'per1',
@@ -112,13 +120,6 @@ df.columns
 df.to_excel('pre_select.xlsx', index=False)
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
--------------------------------------------------------------------------------
-=======
-
->>>>>>> 307c9c86ccd597e82f616e94961c2fe231e9b5d6
 
 ## 년도별 여행지 선택 5순위
 
@@ -169,8 +170,6 @@ fig.show()
 
 ```
 
-
---------------------------------------------------------------------------------
 ## 여행을 선택하는 이유
 
 ```{python}
@@ -196,3 +195,7 @@ plt.legend(fontsize='x-small',loc='center left')
 plt.show()
 
 ```
+
+## 결론
+
+여행지 선택 이유로는 볼거리 제공과 여행지 지명도가 가장 많은 비중을 차지. 그러나 2019년에 들어서면서 여행할 수 있는 시간이 중요한 이유로 급부상. 이러한 변화는 여행객들의 가치관이 변화하고 있음을 시사.
