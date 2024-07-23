@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>여행을 선택하는 이유 – 이삭토스트 맛있조</title>
+<title>이삭토스트 맛있조 - 여행을 선택하는 이유</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -155,7 +155,7 @@ require(['plotly'], function(Plotly) {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -186,7 +186,7 @@ require(['plotly'], function(Plotly) {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -239,7 +239,7 @@ require(['plotly'], function(Plotly) {
 <h2 class="anchored" data-anchor-id="전처리">전처리</h2>
 <section id="파일-불러오기-및-변수-변경" class="level3">
 <h3 class="anchored" data-anchor-id="파일-불러오기-및-변수-변경">파일 불러오기 및 변수 변경</h3>
-<div id="0ddc1281" class="cell" data-execution_count="1">
+<div id="e2666c68" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -247,15 +247,14 @@ require(['plotly'], function(Plotly) {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일 불러오기</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx"</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx"</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">"./data/select.xlsx"</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df.head()</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수 변경</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns <span class="op">=</span> {<span class="st">"소계"</span> : <span class="st">"total"</span>, <span class="st">"남자"</span> : <span class="st">"male"</span>, <span class="st">"여자"</span> : <span class="st">"female"</span>})</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_excel(<span class="st">"./data/select.xlsx"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df.head()</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수 변경</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns <span class="op">=</span> {<span class="st">"소계"</span> : <span class="st">"total"</span>, <span class="st">"남자"</span> : <span class="st">"male"</span>, <span class="st">"여자"</span> : <span class="st">"female"</span>})</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -417,7 +416,7 @@ require(['plotly'], function(Plotly) {
 </section>
 <section id="연령대-변수-추가-및-삭제" class="level3">
 <h3 class="anchored" data-anchor-id="연령대-변수-추가-및-삭제">연령대 변수 추가 및 삭제</h3>
-<div id="d811e3a1" class="cell" data-execution_count="2">
+<div id="bdff9fde" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 연령대</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"teens"</span>] <span class="op">=</span> df[<span class="st">"15~19세"</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"young_adults"</span>] <span class="op">=</span> df[<span class="st">"20대"</span>] <span class="op">+</span> df[<span class="st">"30대"</span>]</span>
@@ -450,7 +449,7 @@ require(['plotly'], function(Plotly) {
 </section>
 <section id="월급-변수-추가-및-삭제" class="level3">
 <h3 class="anchored" data-anchor-id="월급-변수-추가-및-삭제">월급 변수 추가 및 삭제</h3>
-<div id="013624bd" class="cell" data-execution_count="3">
+<div id="e83518d8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"l_sal"</span>] <span class="op">=</span> df[<span class="st">"100만원 미만"</span>] <span class="op">+</span> df[<span class="st">"100~200만원 미만"</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"m_sal"</span>] <span class="op">=</span> df[<span class="st">"200~300만원 미만"</span>] <span class="op">+</span> df[<span class="st">"300~400만원 미만"</span>] <span class="op">+</span> df[<span class="st">"400~500만원 미만"</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"h_sal"</span>] <span class="op">=</span> df[<span class="st">"500~600만원 미만"</span>] <span class="op">+</span> df[<span class="st">"600만원 이상"</span>]</span>
@@ -482,7 +481,7 @@ require(['plotly'], function(Plotly) {
 </section>
 <section id="가구-학벌-무응답-rename" class="level3">
 <h3 class="anchored" data-anchor-id="가구-학벌-무응답-rename">가구, 학벌, 무응답 rename</h3>
-<div id="d16756b0" class="cell" data-execution_count="4">
+<div id="8d88cd5f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 가구</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.rename(columns <span class="op">=</span> { <span class="st">'1인'</span> : <span class="st">'per1'</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">'2인'</span> : <span class="st">'per2'</span>,</span>
@@ -536,7 +535,7 @@ memory usage: 11.8+ KB</code></pre>
 </section>
 <section id="년도별-여행지-선택-5순위" class="level2">
 <h2 class="anchored" data-anchor-id="년도별-여행지-선택-5순위">년도별 여행지 선택 5순위</h2>
-<div id="cc3c9ab2" class="cell" data-execution_count="5">
+<div id="6496e51b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -581,9 +580,9 @@ memory usage: 11.8+ KB</code></pre>
 <span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>                            <div id="b67a4bb9-fe11-4dae-b8ba-71ad2df28b80" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("b67a4bb9-fe11-4dae-b8ba-71ad2df28b80")) {                    Plotly.newPlot(                        "b67a4bb9-fe11-4dae-b8ba-71ad2df28b80",                        [{"alignmentgroup":"True","hovertemplate":"item=볼거리 제공\u003cbr\u003e년도=%{x}\u003cbr\u003e총합=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"볼거리 제공","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"볼거리 제공","offsetgroup":"볼거리 제공","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[18.0,19.6,18.6,21.3,21.8],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"item=여행 동반자 유형\u003cbr\u003e년도=%{x}\u003cbr\u003e총합=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"여행 동반자 유형","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"여행 동반자 유형","offsetgroup":"여행 동반자 유형","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[8.2,9.4,8.4,8.8,8.8],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"item=여행지 지명도\u003cbr\u003e년도=%{x}\u003cbr\u003e총합=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"여행지 지명도","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"여행지 지명도","offsetgroup":"여행지 지명도","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[18.0,18.2,16.4,16.1,17.4],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"item=여행할 수 있는 시간\u003cbr\u003e년도=%{x}\u003cbr\u003e총합=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"여행할 수 있는 시간","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"여행할 수 있는 시간","offsetgroup":"여행할 수 있는 시간","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[null,9.5,12.4,12.5,12.3],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"item=음식\u003cbr\u003e년도=%{x}\u003cbr\u003e총합=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"음식","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"음식","offsetgroup":"음식","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[10.9,null,null,null,null],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"item=이동 거리\u003cbr\u003e년도=%{x}\u003cbr\u003e총합=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"이동 거리","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"이동 거리","offsetgroup":"이동 거리","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[8.7,10.3,12.6,12.4,11.4],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"년도"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"총합"}},"legend":{"title":{"text":"Item"},"tracegroupgap":0,"x":1,"y":1,"xanchor":"left","yanchor":"top"},"title":{"text":"년도별 여행지 선택 5순위"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
+<div>                            <div id="597cc75a-c300-4c48-ae69-b9bf2ccc39f5" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("597cc75a-c300-4c48-ae69-b9bf2ccc39f5")) {                    Plotly.newPlot(                        "597cc75a-c300-4c48-ae69-b9bf2ccc39f5",                        [{"alignmentgroup":"True","hovertemplate":"item=\ubcfc\uac70\ub9ac \uc81c\uacf5\u003cbr\u003e\ub144\ub3c4=%{x}\u003cbr\u003e\ucd1d\ud569=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"\ubcfc\uac70\ub9ac \uc81c\uacf5","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"\ubcfc\uac70\ub9ac \uc81c\uacf5","offsetgroup":"\ubcfc\uac70\ub9ac \uc81c\uacf5","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[18.0,19.6,18.6,21.3,21.8],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"item=\uc5ec\ud589 \ub3d9\ubc18\uc790 \uc720\ud615\u003cbr\u003e\ub144\ub3c4=%{x}\u003cbr\u003e\ucd1d\ud569=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"\uc5ec\ud589 \ub3d9\ubc18\uc790 \uc720\ud615","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"\uc5ec\ud589 \ub3d9\ubc18\uc790 \uc720\ud615","offsetgroup":"\uc5ec\ud589 \ub3d9\ubc18\uc790 \uc720\ud615","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[8.2,9.4,8.4,8.8,8.8],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"item=\uc5ec\ud589\uc9c0 \uc9c0\uba85\ub3c4\u003cbr\u003e\ub144\ub3c4=%{x}\u003cbr\u003e\ucd1d\ud569=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"\uc5ec\ud589\uc9c0 \uc9c0\uba85\ub3c4","marker":{"color":"#00cc96","pattern":{"shape":""}},"name":"\uc5ec\ud589\uc9c0 \uc9c0\uba85\ub3c4","offsetgroup":"\uc5ec\ud589\uc9c0 \uc9c0\uba85\ub3c4","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[18.0,18.2,16.4,16.1,17.4],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"item=\uc5ec\ud589\ud560 \uc218 \uc788\ub294 \uc2dc\uac04\u003cbr\u003e\ub144\ub3c4=%{x}\u003cbr\u003e\ucd1d\ud569=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"\uc5ec\ud589\ud560 \uc218 \uc788\ub294 \uc2dc\uac04","marker":{"color":"#ab63fa","pattern":{"shape":""}},"name":"\uc5ec\ud589\ud560 \uc218 \uc788\ub294 \uc2dc\uac04","offsetgroup":"\uc5ec\ud589\ud560 \uc218 \uc788\ub294 \uc2dc\uac04","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[null,9.5,12.4,12.5,12.3],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"item=\uc74c\uc2dd\u003cbr\u003e\ub144\ub3c4=%{x}\u003cbr\u003e\ucd1d\ud569=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"\uc74c\uc2dd","marker":{"color":"#FFA15A","pattern":{"shape":""}},"name":"\uc74c\uc2dd","offsetgroup":"\uc74c\uc2dd","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[10.9,null,null,null,null],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"item=\uc774\ub3d9 \uac70\ub9ac\u003cbr\u003e\ub144\ub3c4=%{x}\u003cbr\u003e\ucd1d\ud569=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"\uc774\ub3d9 \uac70\ub9ac","marker":{"color":"#19d3f3","pattern":{"shape":""}},"name":"\uc774\ub3d9 \uac70\ub9ac","offsetgroup":"\uc774\ub3d9 \uac70\ub9ac","orientation":"v","showlegend":true,"textposition":"auto","x":[2018,2019,2020,2021,2022],"xaxis":"x","y":[8.7,10.3,12.6,12.4,11.4],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"\ub144\ub3c4"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"\ucd1d\ud569"}},"legend":{"title":{"text":"Item"},"tracegroupgap":0,"x":1,"y":1,"xanchor":"left","yanchor":"top"},"title":{"text":"\ub144\ub3c4\ubcc4 \uc5ec\ud589\uc9c0 \uc120\ud0dd 5\uc21c\uc704"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('b67a4bb9-fe11-4dae-b8ba-71ad2df28b80');
+var gd = document.getElementById('597cc75a-c300-4c48-ae69-b9bf2ccc39f5');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -611,7 +610,7 @@ if (outputEl) {{
 </section>
 <section id="여행을-선택하는-이유" class="level2">
 <h2 class="anchored" data-anchor-id="여행을-선택하는-이유">여행을 선택하는 이유</h2>
-<div id="a958ee1a" class="cell" data-execution_count="6">
+<div id="733ae0ec" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#선 그래프</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>visualappeal <span class="op">=</span> total_all.query(<span class="st">"item == '볼거리 제공'"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>Popularity <span class="op">=</span> total_all.query(<span class="st">"item == '여행지 지명도'"</span>)</span>
@@ -683,7 +682,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -715,29 +725,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -745,7 +733,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
