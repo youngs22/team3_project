@@ -135,3 +135,13 @@ tour_top30['combined_city'].head(10)
 
 tour_top30.shape
 tour_top30.to_excel('pre_tour_top30.xlsx', index=False)
+<<<<<<< HEAD:sun_a/ranking_processing.py
+
+
+
+# ccsscccsdfdfd
+#dd
+# 전처리한 데이터 파일 추출
+# route.to_excel('pre_route.xlsx', index=False)
+=======
+>>>>>>> 9f3a96ff7e05ef0aea415c607acd64adbfda36f2:preprocessing/ranking_processing.py
