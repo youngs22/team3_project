@@ -12,70 +12,25 @@ tour_2022 = pd.read_csv('data/ranking_2022.csv', encoding = 'cp949')
 column_names = tour_2018.columns.tolist()
 print(column_names)
 
-tour_2018 = tour_2018.rename(columns = {'순위'      : 'ranking',    \
-                                        '광역시/도' : 'state',       \
-                                        '시/군/구'  : 'city',   \
-                                        '관광지명'  : 'spot', \
-                                        '도로명주소': 'address',    \
-                                        '중분류 카테고리': 'category_m', \
-                                        '소분류 카테고리': 'category_s', \
-                                        '검색건수':        'search_count'
-                                          })
-tour_2019 = tour_2019.rename(columns = {'순위'      : 'ranking',    \
-                                        '광역시/도' : 'state',       \
-                                        '시/군/구'  : 'city',   \
-                                        '관광지명'  : 'spot', \
-                                        '도로명주소': 'address',    \
-                                        '중분류 카테고리': 'category_m', \
-                                        '소분류 카테고리': 'category_s', \
-                                        '검색건수':        'search_count'
-                                          })
-tour_2020 = tour_2020.rename(columns = {'순위'      : 'ranking',    \
-                                        '광역시/도' : 'state',       \
-                                        '시/군/구'  : 'city',   \
-                                        '관광지명'  : 'spot', \
-                                        '도로명주소': 'address',    \
-                                        '중분류 카테고리': 'category_m', \
-                                        '소분류 카테고리': 'category_s', \
-                                        '검색건수':        'search_count'
-                                          })
-tour_2021 = tour_2021.rename(columns = {'순위'      : 'ranking',    \
-                                        '광역시/도' : 'state',       \
-                                        '시/군/구'  : 'city',   \
-                                        '관광지명'  : 'spot', \
-                                        '도로명주소': 'address',    \
-                                        '중분류 카테고리': 'category_m', \
-                                        '소분류 카테고리': 'category_s', \
-                                        '검색건수':        'search_count'
-                                          })
-tour_2022 = tour_2022.rename(columns = {'순위'      : 'ranking',    \
-                                        '광역시/도' : 'state',       \
-                                        '시/군/구'  : 'city',   \
-                                        '관광지명'  : 'spot', \
-                                        '도로명주소': 'address',    \
-                                        '중분류 카테고리': 'category_m', \
-                                        '소분류 카테고리': 'category_s', \
-                                        '검색건수':        'search_count'
-                                          })
-cate_remove = ['교통시설', '면세점', '백화점','쇼핑몰', '대형마트', '기타쇼핑시설']
+# 열 이름 변경
+rename_dict = {'순위': 'ranking', '광역시/도': 'state', '시/군/구': 'city', '관광지명': 'spot',
+               '도로명주소': 'address', '중분류 카테고리': 'category_m', '소분류 카테고리': 'category_s', '검색건수': 'search_count'}
+
+tour_2018.rename(columns=rename_dict, inplace=True)
+tour_2019.rename(columns=rename_dict, inplace=True)
+tour_2020.rename(columns=rename_dict, inplace=True)
+tour_2021.rename(columns=rename_dict, inplace=True)
+tour_2022.rename(columns=rename_dict, inplace=True)
+
+# 'cate_remove' 목록 정의
+cate_remove = ['교통시설', '면세점', '백화점', '쇼핑몰', '대형마트', '기타쇼핑시설']
+
+# 각 연도별 데이터에서 'cate_remove' 목록에 해당하는 카테고리를 제거
 tour_2018 = tour_2018[~tour_2018['category_s'].isin(cate_remove)]
-print(tour_2018['category_s'].unique())
-
-cate_remove = ['교통시설', '면세점', '백화점', '쇼핑몰', '대형마트', '기타쇼핑시설']
 tour_2019 = tour_2019[~tour_2019['category_s'].isin(cate_remove)]
-print(tour_2019['category_s'].unique())
-
-cate_remove = ['교통시설', '면세점', '백화점', '쇼핑몰', '대형마트', '기타쇼핑시설']
 tour_2020 = tour_2020[~tour_2020['category_s'].isin(cate_remove)]
-print(tour_2020['category_s'].unique())
-
-cate_remove = ['교통시설', '면세점', '백화점', '쇼핑몰', '대형마트', '기타쇼핑시설']
 tour_2021 = tour_2021[~tour_2021['category_s'].isin(cate_remove)]
-print(tour_2021['category_s'].unique())
-
-cate_remove = ['교통시설', '면세점', '백화점', '쇼핑몰', '대형마트', '기타쇼핑시설']
 tour_2022 = tour_2022[~tour_2022['category_s'].isin(cate_remove)]
-print(tour_2022['category_s'].unique())
 
 #top 30 추출하기
 tour_2018 = tour_2018.sort_values(by = 'search_count', ascending = False).head(30)
@@ -102,17 +57,11 @@ tour_top30 = tour_top30.drop(columns=['address'])
 tour_top30.info()
 
 #순위 열 삭제
-sum(tour_2022['category_s'] == "교통시설")
 tour_top30.drop(columns=['ranking'], inplace=True)
 
 #년도 행 추가하기
 import pandas as pd
 import numpy as np
-
-# 예시 데이터프레임 생성
-# 실제 데이터프레임이 tour_30 이므로, 예시 데이터를 생성할 필요 없습니다.
-# 데이터프레임이 이미 있는 경우에는 아래 코드로 작업을 진행합니다.
-# tour_30 = pd.read_excel('pre_tour_top30.xlsx')  # 예시: 데이터프레임 로드
 
 # 반복할 년도 리스트
 years = [2018, 2019, 2020, 2021, 2022]
@@ -135,3 +84,13 @@ tour_top30['combined_city'].head(10)
 
 tour_top30.shape
 tour_top30.to_excel('pre_tour_top30.xlsx', index=False)
+<<<<<<< HEAD:sun_a/ranking_processing.py
+
+
+
+# ccsscccsdfdfd
+#dd
+# 전처리한 데이터 파일 추출
+# route.to_excel('pre_route.xlsx', index=False)
+=======
+>>>>>>> 9f3a96ff7e05ef0aea415c607acd64adbfda36f2:preprocessing/ranking_processing.py
