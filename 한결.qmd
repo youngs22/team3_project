@@ -4,4 +4,3 @@ jupyter: python3
 ---
 
 About this site
-
