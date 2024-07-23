@@ -1,6 +1,13 @@
 ---
 title: "서론"
 jupyter: python3
+<<<<<<< HEAD
+=======
+# toc: false
+# about:
+#     id: hero-heading
+#     template: jolla
+>>>>>>> cf3bf58b0c79620880e7c7425fdfb00376b89566
 ---
 
 ## \< 국내 여행의 의미 \>
