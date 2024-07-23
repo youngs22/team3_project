@@ -1,5 +1,5 @@
 ---
-title: "이삭토스트 맛있조"
+title: "지역별 관광지 검색 순위"
 jupyter: python3
 ---
 
