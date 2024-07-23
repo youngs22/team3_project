@@ -4,7 +4,9 @@ jupyter: python3
 ---
 
 ## 전처리
+
 ### 데이터 불러오기
+
 ```{python}
 import numpy as np
 import pandas as pd
@@ -14,6 +16,7 @@ route.head(10)
 ```
 
 ### 결측치 처리
+
 ```{python}
 # 연도 결측치 처리
 route.loc[0:8,"year"] = "2018"
@@ -28,8 +31,8 @@ route.isna().sum()
 
 ```
 
-
 ### 변수명 바꾸기
+
 ```{python}
 # 변수 영어로 변경
 route = route.rename(columns = {"시점":"year", "항목":"access_path", "소계" : "total", "남자" : "male", "여자" : "female"})
@@ -59,8 +62,8 @@ route = route.rename(columns = { '초졸 이하' : 'elmt',
 route.info()
 ```
 
-
 ### 변수 합치기
+
 ```{python}
 # 연령대
 route["teens"] = route["15~19세"]   
@@ -91,7 +94,6 @@ route.loc[36:43, "senior"] = (route.loc[36:43, "senior"]        / route.loc[36:4
 
 route.info()
 ```
-
 
 ```{python}
 #월급
@@ -125,6 +127,7 @@ route.info()
 ```
 
 ### 불필요한 열 없애기
+
 ```{python}
 # 나이
 route = route.drop(['15~19세', '20대', '30대', '40대', '50대', '60대', '70세 이상'], axis=1)
@@ -140,12 +143,13 @@ route.info()
 ```
 
 ### 전처리한 데이터 파일 추출
+
 ```{python}
 route.to_excel('pre_route.xlsx', index=False)
 ```
 
-
 ## 5개년 평균 경로 순위 막대그래프
+
 ```{python}
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -175,6 +179,7 @@ plt.show()
 ```
 
 ## 연도별 정보 획득 경로 추이
+
 ```{python}
 from matplotlib.ticker import MaxNLocator
 
@@ -201,4 +206,6 @@ plt.show()
 
 ```
 
+## 결론
 
+ 지인추천, 과거경험, 정보없이 여행, 인터넷 및 모바일앱이 가장 많이 여행 정보를 획득하는 경로로 파악됨. 지인추천은 2018년도 이후로 감소하는 추세이고, 인터넷 및 모바일앱은 계속해서 증가하는 추세임.

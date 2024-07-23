@@ -12,14 +12,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 파일 불러오기
-<<<<<<< HEAD
 df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx")
 
-=======
 
 df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx")
 df = pd.read_excel("./data/select.xlsx")
->>>>>>> 307c9c86ccd597e82f616e94961c2fe231e9b5d6
 df.head()
 
 # 변수 변경
@@ -116,13 +113,9 @@ df.columns
 df.to_excel('pre_select.xlsx', index=False)
 
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
--------------------------------------------------------------------------------
-=======
 
->>>>>>> 307c9c86ccd597e82f616e94961c2fe231e9b5d6
+
+
 
 ## 년도별 여행지 선택 5순위
 
@@ -174,7 +167,6 @@ fig.show()
 ```
 
 
---------------------------------------------------------------------------------
 ## 여행을 선택하는 이유
 
 ```{python}
@@ -203,4 +195,4 @@ plt.show()
 
 ## 결론
 
-### 여행지 선택 이유로는 볼거리 제공과 여행지 지명도가 가장 많은 비중을 차지. 그러나 2019년에 들어서면서 여행할 수 있는 시간이 중요한 이유로 급부상. 이러한 변화는 여행객들의 가치관이 변화하고 있음을 시사.
+ 여행지 선택 이유로는 볼거리 제공과 여행지 지명도가 가장 많은 비중을 차지. 그러나 2019년에 들어서면서 여행할 수 있는 시간이 중요한 이유로 급부상. 이러한 변화는 여행객들의 가치관이 변화하고 있음을 시사.
