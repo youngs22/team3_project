@@ -192,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
 <section id="전처리" class="level2">
 <h2 class="anchored" data-anchor-id="전처리">전처리</h2>
-<div id="1738603c" class="cell" data-execution_count="1">
+<div id="5297f120" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>tour_2021.rename(columns<span class="op">=</span>rename_dict, inplace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>tour_2022.rename(columns<span class="op">=</span>rename_dict, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="558de7bb" class="cell" data-execution_count="2">
+<div id="ac3c2d95" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 'cate_remove' 목록 정의</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cate_remove <span class="op">=</span> [<span class="st">'교통시설'</span>, <span class="st">'면세점'</span>, <span class="st">'백화점'</span>, <span class="st">'쇼핑몰'</span>, <span class="st">'대형마트'</span>, <span class="st">'기타쇼핑시설'</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -224,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>tour_2021 <span class="op">=</span> tour_2021[<span class="op">~</span>tour_2021[<span class="st">'category_s'</span>].isin(cate_remove)]</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>tour_2022 <span class="op">=</span> tour_2022[<span class="op">~</span>tour_2022[<span class="st">'category_s'</span>].isin(cate_remove)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="251b1e66" class="cell" data-execution_count="3">
+<div id="9305a0ec" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 각 데이터프레임에 연도 열 추가</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>tour_2018[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2018</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tour_2019[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2019</span></span>
@@ -232,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>tour_2021[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2021</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>tour_2022[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2022</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="84efe71d" class="cell" data-execution_count="4">
+<div id="2619dcfa" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터 결합</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tours <span class="op">=</span> [tour_2018, tour_2019, tour_2020, tour_2021, tour_2022]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>tour_total <span class="op">=</span> pd.concat(tours, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 불필요한 열 삭제</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>tour_total.drop(columns<span class="op">=</span>[<span class="st">'address'</span>, <span class="st">'ranking'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="840151ee" class="cell" data-execution_count="5">
+<div id="033ac190" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 'combined_city' 열 추가</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tour_total[<span class="st">'combined_city'</span>] <span class="op">=</span> tour_total[<span class="st">'state'</span>] <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> tour_total[<span class="st">'city'</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>tour_total.to_excel(<span class="st">'total_tour.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 결과 확인</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>tour_total.info()</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tour_total.head(<span class="dv">40</span>))  <span class="co"># 상위 40개 행 출력</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tour_total.head())  <span class="co"># 상위 40개 행 출력</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tour_total[<span class="st">'category_s'</span>].unique())  <span class="co"># 카테고리 확인</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -266,95 +266,25 @@ Data columns (total 8 columns):
  7   combined_city  1373 non-null   object
 dtypes: int64(2), object(6)
 memory usage: 85.9+ KB
-      state      city         spot category_m   category_s  search_count  \
-0     서울특별시       강남구          코엑스       문화관광         전시시설        456473   
-1       경기도   용인시 처인구         에버랜드       문화관광         테마공원        330266   
-2     서울특별시       동작구      노량진수산시장         쇼핑           시장        251985   
-3     서울특별시       송파구  가락동농수산물도매시장         쇼핑           시장        231899   
-4     서울특별시       용산구   CGV용산아이파크몰       문화관광         공연시설        227562   
-5     인천광역시        중구      을왕리해수욕장       자연관광  자연경관(하천/해양)        217836   
-6       경기도  고양시 일산서구     킨텍스제1전시장       문화관광         전시시설        214874   
-7     서울특별시       송파구      롯데월드잠실점       문화관광         테마공원        212754   
-8   전북특별자치도   전주시 완산구       전주한옥마을       역사관광        역사유적지        212376   
-9     인천광역시        중구          월미도       자연관광  자연경관(하천/해양)        207328   
-10  강원특별자치도       속초시     속초관광수산시장         쇼핑           시장        192140   
-11  강원특별자치도       강릉시         경포해변       자연관광  자연경관(하천/해양)        188157   
-12     충청남도       보령시       대천해수욕장       자연관광  자연경관(하천/해양)        186565   
-13    인천광역시       남동구         소래포구       자연관광  자연경관(하천/해양)        181965   
-14    서울특별시      영등포구      여의도한강공원       문화관광         도시공원        176908   
-15      경기도  고양시 일산서구     킨텍스제2전시장       문화관광         전시시설        174400   
-16      경기도       구리시   구리농수산물도매시장         쇼핑           시장        169352   
-17  강원특별자치도       속초시         속초해변       자연관광  자연경관(하천/해양)        165529   
-18      경기도   용인시 기흥구        한국민속촌       역사관광        역사유적지        163291   
-19      경기도  고양시 일산동구       일산호수공원       문화관광         도시공원        163209   
-20    부산광역시      해운대구      해운대해수욕장       자연관광  자연경관(하천/해양)        162178   
-21    인천광역시       연수구      송도센트럴파크       문화관광         도시공원        161025   
-22  제주특별자치도       제주시       동문재래시장         쇼핑           시장        159847   
-23      경기도       과천시        서울대공원       문화관광         테마공원        159486   
-24  강원특별자치도       정선군      강원랜드카지노       문화관광      기타문화관광지        158750   
-25    인천광역시        중구         연안부두       자연관광  자연경관(하천/해양)        156143   
-26      경기도       파주시      헤이리예술마을       기타관광         기타관광        154418   
-27    부산광역시       수영구      광안리해수욕장       자연관광  자연경관(하천/해양)        152219   
-28  제주특별자치도      서귀포시    서귀포매일올레시장         쇼핑           시장        151192   
-29    서울특별시       광진구       어린이대공원       문화관광         테마공원        149671   
-30    인천광역시       남동구    소래포구종합어시장         쇼핑           시장        147823   
-31  강원특별자치도       강릉시         주문진항       자연관광  자연경관(하천/해양)        147683   
-32  강원특별자치도       양양군          낙산사       역사관광         종교성지        147174   
-33      경기도       파주시     마장호수출렁다리       기타관광         기타관광        142273   
-34      경기도       광명시         광명동굴       자연관광         자연생태        137326   
-35    서울특별시       서초구    예술의전당콘서트홀       문화관광         공연시설        136970   
-36    부산광역시       기장군        해동용궁사       역사관광         종교성지        135424   
-37  강원특별자치도       원주시    원주소금산출렁다리       기타관광         기타관광        131047   
-38    부산광역시      해운대구       송정해수욕장       자연관광  자연경관(하천/해양)        129772   
-39  강원특별자치도       강릉시         안목해변       자연관광  자연경관(하천/해양)        128148   
+   state     city         spot category_m category_s  search_count  year  \
+0  서울특별시      강남구          코엑스       문화관광       전시시설        456473  2018   
+1    경기도  용인시 처인구         에버랜드       문화관광       테마공원        330266  2018   
+2  서울특별시      동작구      노량진수산시장         쇼핑         시장        251985  2018   
+3  서울특별시      송파구  가락동농수산물도매시장         쇼핑         시장        231899  2018   
+4  서울특별시      용산구   CGV용산아이파크몰       문화관광       공연시설        227562  2018   
 
-    year    combined_city  
-0   2018        서울특별시 강남구  
-1   2018      경기도 용인시 처인구  
-2   2018        서울특별시 동작구  
-3   2018        서울특별시 송파구  
-4   2018        서울특별시 용산구  
-5   2018         인천광역시 중구  
-6   2018     경기도 고양시 일산서구  
-7   2018        서울특별시 송파구  
-8   2018  전북특별자치도 전주시 완산구  
-9   2018         인천광역시 중구  
-10  2018      강원특별자치도 속초시  
-11  2018      강원특별자치도 강릉시  
-12  2018         충청남도 보령시  
-13  2018        인천광역시 남동구  
-14  2018       서울특별시 영등포구  
-15  2018     경기도 고양시 일산서구  
-16  2018          경기도 구리시  
-17  2018      강원특별자치도 속초시  
-18  2018      경기도 용인시 기흥구  
-19  2018     경기도 고양시 일산동구  
-20  2018       부산광역시 해운대구  
-21  2018        인천광역시 연수구  
-22  2018      제주특별자치도 제주시  
-23  2018          경기도 과천시  
-24  2018      강원특별자치도 정선군  
-25  2018         인천광역시 중구  
-26  2018          경기도 파주시  
-27  2018        부산광역시 수영구  
-28  2018     제주특별자치도 서귀포시  
-29  2018        서울특별시 광진구  
-30  2018        인천광역시 남동구  
-31  2018      강원특별자치도 강릉시  
-32  2018      강원특별자치도 양양군  
-33  2018          경기도 파주시  
-34  2018          경기도 광명시  
-35  2018        서울특별시 서초구  
-36  2018        부산광역시 기장군  
-37  2018      강원특별자치도 원주시  
-38  2018       부산광역시 해운대구  
-39  2018      강원특별자치도 강릉시  
+  combined_city  
+0     서울특별시 강남구  
+1   경기도 용인시 처인구  
+2     서울특별시 동작구  
+3     서울특별시 송파구  
+4     서울특별시 용산구  
 ['전시시설' '테마공원' '시장' '공연시설' '자연경관(하천/해양)' '역사유적지' '도시공원' '기타문화관광지' '기타관광'
  '종교성지' '자연생태' '레저스포츠시설' '랜드마크관광' '자연경관(산)' '복합관광시설' '자연공원' '육상레저스포츠'
  '기타레저스포츠' '웰니스관광' '농/산/어촌체험' '자연관광(산)' '데이트코스' '수상레저스포츠']</code></pre>
 </div>
 </div>
-<div id="56e1e6cd" class="cell" data-execution_count="6">
+<div id="71b6c2dd" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> plt</span>
@@ -367,11 +297,11 @@ memory usage: 85.9+ KB
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span><span class="st">'Malgun Gothic'</span></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span><span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_18260\3705749607.py:5: DtypeWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_17612\3705749607.py:5: DtypeWarning:
 
 Columns (1,2,3,4,5,6,9) have mixed types. Specify dtype option on import or set low_memory=False.
 
-C:\Users\USER\AppData\Local\Temp\ipykernel_18260\3705749607.py:6: DtypeWarning:
+C:\Users\USER\AppData\Local\Temp\ipykernel_17612\3705749607.py:6: DtypeWarning:
 
 Columns (1,2,3,4,5,6,9) have mixed types. Specify dtype option on import or set low_memory=False.
 </code></pre>
@@ -396,7 +326,7 @@ dtypes: float64(3), object(7)
 memory usage: 80.0+ MB</code></pre>
 </div>
 </div>
-<div id="8286c702" class="cell" data-execution_count="7">
+<div id="54c5686e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Top 3 순위 구하기</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>tour_total_rank <span class="op">=</span> tour_total.groupby(<span class="st">"spot"</span>)<span class="op">\</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>                            .agg(mean <span class="op">=</span> (<span class="st">"search_count"</span>,<span class="st">"mean"</span>))</span>
@@ -433,7 +363,7 @@ memory usage: 80.0+ MB</code></pre>
 <pre><code>&lt;Figure size 672x480 with 0 Axes&gt;</code></pre>
 </div>
 </div>
-<div id="8757f8f0" class="cell" data-execution_count="8">
+<div id="c71fdc84" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 중분류 수정본</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tour_total["year"] = tour_total["year"].astype(int)</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Top 3 순위 구하기</span></span>

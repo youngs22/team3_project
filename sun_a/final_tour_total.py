@@ -71,3 +71,5 @@ plt.tight_layout()
 #plt.xticks(years)  # x축 눈금 설정
 plt.show()
 
+ tour_total.query('category_m == "문화관광"')
+ 
