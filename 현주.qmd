@@ -12,14 +12,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 파일 불러오기
-<<<<<<< HEAD
 df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx")
-
-=======
 
 df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx")
 df = pd.read_excel("./data/select.xlsx")
->>>>>>> 307c9c86ccd597e82f616e94961c2fe231e9b5d6
 df.head()
 
 # 변수 변경
