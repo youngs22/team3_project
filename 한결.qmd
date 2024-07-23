@@ -136,29 +136,6 @@ num_trip = num_trip.drop(num_trip.columns[np.arange(5,17,1)], axis=1)
 
 ___
 
-### 데이터의 정보 확인하기 - info(), shape, head(), tail(), describe() 이용
-```{python}
-num_trip.info()
-```
-
-```{python}
-num_trip.shape
-```
-
-```{python}
-num_trip.describe()
-```
-
-```{python}
-num_trip.head(12)
-```
-
-```{python}
-num_trip.tail(12)
-```
-
-___
-
 ### 데이터 문제점 해결
 #### 1. year의 NaN값을 채워야함
 ```{python}
