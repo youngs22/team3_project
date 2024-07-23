@@ -39,7 +39,7 @@ print(tour_2022['search_count'].unique())
 # 시/군/구 동명으로 인해 추가 열 생성(혼선 막기 위함)
 tour_2022['combined_city'] = tour_2022['state'] + " " +tour_2022['city']
 tour_2022.head(10)
-sum(tour_2022['category_s'] == "교통시설")
+
 import matplotlib.pyplot as plt
 plt.rcParams['font.family'] ='Malgun Gothic'
 plt.rcParams['axes.unicode_minus'] =False
