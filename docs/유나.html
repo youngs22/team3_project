@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>여행 정보를 얻는 경로 – 이삭토스트 맛있조</title>
+<title>이삭토스트 맛있조 - 여행 정보 획득 경로</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -100,12 +100,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-
 
 
 <link rel="stylesheet" href="styles.css">
@@ -123,14 +117,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="./index.html"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">서론</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./한결.html"> 
@@ -154,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -188,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">여행 정보를 얻는 경로</h1>
+<h1 class="title">여행 정보 획득 경로</h1>
 </div>
 
 
@@ -209,295 +203,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="전처리">전처리</h2>
 <section id="데이터-불러오기" class="level3">
 <h3 class="anchored" data-anchor-id="데이터-불러오기">데이터 불러오기</h3>
-<div id="dc7287b0" class="cell" data-execution_count="1">
+<div id="803b3e36" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/youna_route.xlsx"</span>,header<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>route.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">시점</th>
-<th data-quarto-table-cell-role="th">항목</th>
-<th data-quarto-table-cell-role="th">소계</th>
-<th data-quarto-table-cell-role="th">남자</th>
-<th data-quarto-table-cell-role="th">여자</th>
-<th data-quarto-table-cell-role="th">15~19세</th>
-<th data-quarto-table-cell-role="th">20대</th>
-<th data-quarto-table-cell-role="th">30대</th>
-<th data-quarto-table-cell-role="th">40대</th>
-<th data-quarto-table-cell-role="th">50대</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">2인</th>
-<th data-quarto-table-cell-role="th">3인이상</th>
-<th data-quarto-table-cell-role="th">100만원 미만</th>
-<th data-quarto-table-cell-role="th">100~200만원 미만</th>
-<th data-quarto-table-cell-role="th">200~300만원 미만</th>
-<th data-quarto-table-cell-role="th">300~400만원 미만</th>
-<th data-quarto-table-cell-role="th">400~500만원 미만</th>
-<th data-quarto-table-cell-role="th">500~600만원 미만</th>
-<th data-quarto-table-cell-role="th">600만원 이상</th>
-<th data-quarto-table-cell-role="th">무응답</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>2018.0</td>
-<td>과거 방문 경험</td>
-<td>24.0</td>
-<td>24.8</td>
-<td>23.2</td>
-<td>18.8</td>
-<td>19.5</td>
-<td>25.1</td>
-<td>26.8</td>
-<td>25.6</td>
-<td>...</td>
-<td>24.4</td>
-<td>23.8</td>
-<td>23.6</td>
-<td>24.8</td>
-<td>25.3</td>
-<td>22.1</td>
-<td>22.3</td>
-<td>26.3</td>
-<td>24.4</td>
-<td>17.5</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>NaN</td>
-<td>주변인(친지/친구/동료 등)</td>
-<td>41.5</td>
-<td>40.4</td>
-<td>42.7</td>
-<td>39</td>
-<td>41.9</td>
-<td>37.1</td>
-<td>39.4</td>
-<td>44.6</td>
-<td>...</td>
-<td>43.4</td>
-<td>40.5</td>
-<td>50.4</td>
-<td>42.7</td>
-<td>42.5</td>
-<td>40.2</td>
-<td>43.3</td>
-<td>39.8</td>
-<td>41.2</td>
-<td>39.4</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>NaN</td>
-<td>인터넷 사이트/모바일 앱(PC/스마트폰)</td>
-<td>8.9</td>
-<td>9.7</td>
-<td>8.2</td>
-<td>12.7</td>
-<td>15.1</td>
-<td>14.8</td>
-<td>8.3</td>
-<td>4.6</td>
-<td>...</td>
-<td>6</td>
-<td>10.0</td>
-<td>0.8</td>
-<td>2.2</td>
-<td>5.8</td>
-<td>9.7</td>
-<td>9.7</td>
-<td>9.9</td>
-<td>10.9</td>
-<td>20.3</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>NaN</td>
-<td>광고(TV/라디오/ 신문/잡지/ 지하철/옥외 광고판 등)</td>
-<td>3.8</td>
-<td>3.8</td>
-<td>3.9</td>
-<td>3.3</td>
-<td>3</td>
-<td>5.6</td>
-<td>3.4</td>
-<td>3.5</td>
-<td>...</td>
-<td>4</td>
-<td>4.0</td>
-<td>2.3</td>
-<td>2.8</td>
-<td>3.9</td>
-<td>4.5</td>
-<td>3.6</td>
-<td>3.3</td>
-<td>4.4</td>
-<td>4.1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>NaN</td>
-<td>기사 및 방송 프로그램(TV/라디오/ 신문/잡지)</td>
-<td>4.0</td>
-<td>3.7</td>
-<td>4.3</td>
-<td>2.8</td>
-<td>4.4</td>
-<td>4.1</td>
-<td>4.4</td>
-<td>3.9</td>
-<td>...</td>
-<td>3.1</td>
-<td>4.3</td>
-<td>1</td>
-<td>2.9</td>
-<td>5.4</td>
-<td>4.6</td>
-<td>2.9</td>
-<td>4.7</td>
-<td>3.3</td>
-<td>2.6</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">5</td>
-<td>NaN</td>
-<td>관광 안내 서적</td>
-<td>2.1</td>
-<td>2.2</td>
-<td>2.1</td>
-<td>2.5</td>
-<td>2</td>
-<td>2</td>
-<td>2.3</td>
-<td>2.2</td>
-<td>...</td>
-<td>1.7</td>
-<td>2.3</td>
-<td>2.1</td>
-<td>1.1</td>
-<td>1.5</td>
-<td>2.5</td>
-<td>2</td>
-<td>2.5</td>
-<td>2.4</td>
-<td>0.8</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">6</td>
-<td>NaN</td>
-<td>여행사(방문, 전화)</td>
-<td>1.6</td>
-<td>1.6</td>
-<td>1.7</td>
-<td>0.9</td>
-<td>1</td>
-<td>1.2</td>
-<td>1.7</td>
-<td>2.7</td>
-<td>...</td>
-<td>1.2</td>
-<td>1.8</td>
-<td>0.9</td>
-<td>1.1</td>
-<td>1.4</td>
-<td>1.4</td>
-<td>1.5</td>
-<td>2.2</td>
-<td>1.8</td>
-<td>-</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">7</td>
-<td>NaN</td>
-<td>정보 없이 방문</td>
-<td>13.9</td>
-<td>13.9</td>
-<td>13.9</td>
-<td>19</td>
-<td>13.2</td>
-<td>10.2</td>
-<td>13.6</td>
-<td>12.8</td>
-<td>...</td>
-<td>16</td>
-<td>13.3</td>
-<td>19</td>
-<td>22.5</td>
-<td>14.2</td>
-<td>15.1</td>
-<td>14.4</td>
-<td>11.2</td>
-<td>11.6</td>
-<td>15.2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">8</td>
-<td>NaN</td>
-<td>기타</td>
-<td>0.1</td>
-<td>0.0</td>
-<td>0.1</td>
-<td>1</td>
-<td>-</td>
-<td>0</td>
-<td>0.0</td>
-<td>-</td>
-<td>...</td>
-<td>-</td>
-<td>0.1</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>0.3</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">9</td>
-<td>2019.0</td>
-<td>과거 방문 경험</td>
-<td>28.3</td>
-<td>29.3</td>
-<td>27.3</td>
-<td>21.6</td>
-<td>26</td>
-<td>28.7</td>
-<td>29.9</td>
-<td>30.4</td>
-<td>...</td>
-<td>29</td>
-<td>28.2</td>
-<td>28.1</td>
-<td>26.4</td>
-<td>27.7</td>
-<td>29</td>
-<td>27.3</td>
-<td>30.3</td>
-<td>27.7</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-
-<p>10 rows × 39 columns</p>
-</div>
-</div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/youna_route.xlsx"</span>,header<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="결측치-처리" class="level3">
 <h3 class="anchored" data-anchor-id="결측치-처리">결측치 처리</h3>
-<div id="2eb8cb7e" class="cell" data-execution_count="2">
+<div id="130c3e75" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 연도 결측치 처리</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>,<span class="st">"year"</span>] <span class="op">=</span> <span class="st">"2018"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>,<span class="st">"year"</span>] <span class="op">=</span> <span class="st">"2019"</span></span>
@@ -506,56 +221,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>,<span class="st">"year"</span>] <span class="op">=</span> <span class="st">"2022"</span></span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 결측치 제거</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>route.replace(<span class="st">'-'</span>, np.nan, inplace<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>route.isna().<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>시점              39
-항목               0
-소계               0
-남자               0
-여자               1
-15~19세           2
-20대              1
-30대              1
-40대              0
-50대              2
-60대              1
-70세 이상           3
-임금봉급근로자          9
-고용원있는사업주        13
-고용원없는자영업자       10
-무급가족 종사자        13
-사무전문            35
-기술생산노무          36
-판매서비스           36
-자영업             35
-전업주부             2
-학생               1
-무직은퇴            36
-기타               3
-초졸 이하            3
-중학교              2
-고등학교             0
-대학교이상            0
-1인               1
-2인               1
-3인이상             0
-100만원 미만         6
-100~200만원 미만     2
-200~300만원 미만     1
-300~400만원 미만     1
-400~500만원 미만     1
-500~600만원 미만     2
-600만원 이상         1
-무응답             37
-year             0
-dtype: int64</code></pre>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>route.replace(<span class="st">'-'</span>, np.nan, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_16584\4045614584.py:9: FutureWarning:
+
+Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+</code></pre>
 </div>
 </div>
 </section>
 <section id="변수명-바꾸기" class="level3">
 <h3 class="anchored" data-anchor-id="변수명-바꾸기">변수명 바꾸기</h3>
-<div id="1f7dfda6" class="cell" data-execution_count="3">
+<div id="4e06b78e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 변수 영어로 변경</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.rename(columns <span class="op">=</span> {<span class="st">"시점"</span>:<span class="st">"year"</span>, <span class="st">"항목"</span>:<span class="st">"access_path"</span>, <span class="st">"소계"</span> : <span class="st">"total"</span>, <span class="st">"남자"</span> : <span class="st">"male"</span>, <span class="st">"여자"</span> : <span class="st">"female"</span>})</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -580,245 +257,82 @@ dtype: int64</code></pre>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>                         <span class="st">'중학교'</span> : <span class="st">'mid'</span>,</span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'고등학교'</span> : <span class="st">'high'</span>,</span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>                        <span class="st">'대학교이상'</span> : <span class="st">'univ+'</span>,</span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>                        })</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>route.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 44 entries, 0 to 43
-Data columns (total 40 columns):
- #   Column        Non-Null Count  Dtype  
----  ------        --------------  -----  
- 0   year          5 non-null      float64
- 1   access_path   44 non-null     object 
- 2   total         44 non-null     float64
- 3   male          44 non-null     float64
- 4   female        43 non-null     float64
- 5   15~19세        42 non-null     float64
- 6   20대           43 non-null     float64
- 7   30대           43 non-null     float64
- 8   40대           44 non-null     float64
- 9   50대           42 non-null     float64
- 10  60대           43 non-null     float64
- 11  70세 이상        41 non-null     float64
- 12  임금봉급근로자       35 non-null     float64
- 13  고용원있는사업주      31 non-null     float64
- 14  고용원없는자영업자     34 non-null     float64
- 15  무급가족 종사자      31 non-null     float64
- 16  사무전문          9 non-null      float64
- 17  기술생산노무        8 non-null      float64
- 18  판매서비스         8 non-null      float64
- 19  자영업           9 non-null      float64
- 20  전업주부          42 non-null     float64
- 21  학생            43 non-null     float64
- 22  무직은퇴          8 non-null      float64
- 23  기타            41 non-null     float64
- 24  elmt          41 non-null     float64
- 25  mid           42 non-null     float64
- 26  high          44 non-null     float64
- 27  univ+         44 non-null     float64
- 28  per1          43 non-null     float64
- 29  per2          43 non-null     float64
- 30  per3+         44 non-null     float64
- 31  100만원 미만      38 non-null     float64
- 32  100~200만원 미만  42 non-null     float64
- 33  200~300만원 미만  43 non-null     float64
- 34  300~400만원 미만  43 non-null     float64
- 35  400~500만원 미만  43 non-null     float64
- 36  500~600만원 미만  42 non-null     float64
- 37  600만원 이상      43 non-null     float64
- 38  무응답           7 non-null      float64
- 39  year          44 non-null     object 
-dtypes: float64(38), object(2)
-memory usage: 13.9+ KB</code></pre>
-</div>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>                        })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="변수-합치기" class="level3">
 <h3 class="anchored" data-anchor-id="변수-합치기">변수 합치기</h3>
-<div id="de0bd2ec" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 연령대</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"teens"</span>] <span class="op">=</span> route[<span class="st">"15~19세"</span>]   </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"young_adults"</span>] <span class="op">=</span> route[<span class="st">"20대"</span>] <span class="op">+</span> route[<span class="st">"30대"</span>]</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"middle_adults"</span>] <span class="op">=</span> route[<span class="st">"40대"</span>] <span class="op">+</span> route[<span class="st">"50대"</span>]</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"senior"</span>] <span class="op">=</span> route[<span class="st">"60대"</span>] <span class="op">+</span> route[<span class="st">"70세 이상"</span>]</span>
+<div id="73c88e63" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 연령대</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"teens"</span>] <span class="op">=</span> route[<span class="st">"15~19세"</span>]   </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"young_adults"</span>] <span class="op">=</span> route[<span class="st">"20대"</span>] <span class="op">+</span> route[<span class="st">"30대"</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"middle_adults"</span>] <span class="op">=</span> route[<span class="st">"40대"</span>] <span class="op">+</span> route[<span class="st">"50대"</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"senior"</span>] <span class="op">=</span> route[<span class="st">"60대"</span>] <span class="op">+</span> route[<span class="st">"70세 이상"</span>]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co">#2018</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"young_adults"</span>]  <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"young_adults"</span>]  <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"young_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"middle_adults"</span>] <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"senior"</span>]        <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co">#2019</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"young_adults"</span>]  <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"young_adults"</span>]  <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"young_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"middle_adults"</span>] <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"senior"</span>]        <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="co">#2020</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"young_adults"</span>]  <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"young_adults"</span>]  <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"young_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"middle_adults"</span>]    <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"senior"</span>]       <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">#2021</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"young_adults"</span>]  <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"young_adults"</span>]  <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"young_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"middle_adults"</span>] <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"senior"</span>]        <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">#2022</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"young_adults"</span>]  <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"young_adults"</span>]  <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"young_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"middle_adults"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"senior"</span>]        <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="3a85d962" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#월급</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"l_sal"</span>] <span class="op">=</span> route[<span class="st">"100만원 미만"</span>] <span class="op">+</span> route[<span class="st">"100~200만원 미만"</span>]</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"m_sal"</span>] <span class="op">=</span> route[<span class="st">"200~300만원 미만"</span>] <span class="op">+</span> route[<span class="st">"300~400만원 미만"</span>] <span class="op">+</span> route[<span class="st">"400~500만원 미만"</span>]</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"h_sal"</span>] <span class="op">=</span> route[<span class="st">"500~600만원 미만"</span>] <span class="op">+</span> route[<span class="st">"600만원 이상"</span>]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"nr"</span>]<span class="op">=</span> route[<span class="st">"무응답"</span>]</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co">#2018</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"young_adults"</span>]  <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"young_adults"</span>]  <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"young_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"middle_adults"</span>] <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"senior"</span>]        <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"l_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"l_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"l_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"m_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"m_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"m_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"h_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"h_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"h_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co">#2019</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"young_adults"</span>]  <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"young_adults"</span>]  <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"young_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"middle_adults"</span>] <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"senior"</span>]        <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"l_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"l_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"l_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"m_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"m_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"m_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"h_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"h_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"h_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="co">#2020</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"young_adults"</span>]  <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"young_adults"</span>]  <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"young_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"middle_adults"</span>]    <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"senior"</span>]       <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"l_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"l_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"l_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"m_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"m_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"m_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"h_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"h_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"h_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#2021</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"young_adults"</span>]  <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"young_adults"</span>]  <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"young_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"middle_adults"</span>] <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"senior"</span>]        <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"l_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"l_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"l_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"m_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"m_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"m_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"h_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"h_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"h_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="co">#2022</span></span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"young_adults"</span>]  <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"young_adults"</span>]  <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"young_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"middle_adults"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"middle_adults"</span>] <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"middle_adults"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"senior"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"senior"</span>]        <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"senior"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>route.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 44 entries, 0 to 43
-Data columns (total 44 columns):
- #   Column         Non-Null Count  Dtype  
----  ------         --------------  -----  
- 0   year           5 non-null      float64
- 1   access_path    44 non-null     object 
- 2   total          44 non-null     float64
- 3   male           44 non-null     float64
- 4   female         43 non-null     float64
- 5   15~19세         42 non-null     float64
- 6   20대            43 non-null     float64
- 7   30대            43 non-null     float64
- 8   40대            44 non-null     float64
- 9   50대            42 non-null     float64
- 10  60대            43 non-null     float64
- 11  70세 이상         41 non-null     float64
- 12  임금봉급근로자        35 non-null     float64
- 13  고용원있는사업주       31 non-null     float64
- 14  고용원없는자영업자      34 non-null     float64
- 15  무급가족 종사자       31 non-null     float64
- 16  사무전문           9 non-null      float64
- 17  기술생산노무         8 non-null      float64
- 18  판매서비스          8 non-null      float64
- 19  자영업            9 non-null      float64
- 20  전업주부           42 non-null     float64
- 21  학생             43 non-null     float64
- 22  무직은퇴           8 non-null      float64
- 23  기타             41 non-null     float64
- 24  elmt           41 non-null     float64
- 25  mid            42 non-null     float64
- 26  high           44 non-null     float64
- 27  univ+          44 non-null     float64
- 28  per1           43 non-null     float64
- 29  per2           43 non-null     float64
- 30  per3+          44 non-null     float64
- 31  100만원 미만       38 non-null     float64
- 32  100~200만원 미만   42 non-null     float64
- 33  200~300만원 미만   43 non-null     float64
- 34  300~400만원 미만   43 non-null     float64
- 35  400~500만원 미만   43 non-null     float64
- 36  500~600만원 미만   42 non-null     float64
- 37  600만원 이상       43 non-null     float64
- 38  무응답            7 non-null      float64
- 39  year           44 non-null     object 
- 40  teens          42 non-null     float64
- 41  young_adults   42 non-null     float64
- 42  middle_adults  42 non-null     float64
- 43  senior         41 non-null     float64
-dtypes: float64(42), object(2)
-memory usage: 15.2+ KB</code></pre>
-</div>
-</div>
-<div id="221bab3a" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#월급</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"l_sal"</span>] <span class="op">=</span> route[<span class="st">"100만원 미만"</span>] <span class="op">+</span> route[<span class="st">"100~200만원 미만"</span>]</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"m_sal"</span>] <span class="op">=</span> route[<span class="st">"200~300만원 미만"</span>] <span class="op">+</span> route[<span class="st">"300~400만원 미만"</span>] <span class="op">+</span> route[<span class="st">"400~500만원 미만"</span>]</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"h_sal"</span>] <span class="op">=</span> route[<span class="st">"500~600만원 미만"</span>] <span class="op">+</span> route[<span class="st">"600만원 이상"</span>]</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>route[<span class="st">"nr"</span>]<span class="op">=</span> route[<span class="st">"무응답"</span>]</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#2018</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"l_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"l_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"l_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"m_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"m_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"m_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"h_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"h_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">0</span>:<span class="dv">8</span>, <span class="st">"h_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">#2019</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"l_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"l_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"l_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"m_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"m_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"m_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"h_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"h_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">9</span>:<span class="dv">17</span>, <span class="st">"h_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="co">#2020</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"l_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"l_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"l_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"m_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"m_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"m_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"h_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"h_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">18</span>:<span class="dv">26</span>, <span class="st">"h_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">#2021</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"l_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"l_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"l_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"m_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"m_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"m_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"h_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"h_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">27</span>:<span class="dv">35</span>, <span class="st">"h_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co">#2022</span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"l_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"l_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"l_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"m_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"m_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"m_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"h_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"h_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"h_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>route.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
-RangeIndex: 44 entries, 0 to 43
-Data columns (total 48 columns):
- #   Column         Non-Null Count  Dtype  
----  ------         --------------  -----  
- 0   year           5 non-null      float64
- 1   access_path    44 non-null     object 
- 2   total          44 non-null     float64
- 3   male           44 non-null     float64
- 4   female         43 non-null     float64
- 5   15~19세         42 non-null     float64
- 6   20대            43 non-null     float64
- 7   30대            43 non-null     float64
- 8   40대            44 non-null     float64
- 9   50대            42 non-null     float64
- 10  60대            43 non-null     float64
- 11  70세 이상         41 non-null     float64
- 12  임금봉급근로자        35 non-null     float64
- 13  고용원있는사업주       31 non-null     float64
- 14  고용원없는자영업자      34 non-null     float64
- 15  무급가족 종사자       31 non-null     float64
- 16  사무전문           9 non-null      float64
- 17  기술생산노무         8 non-null      float64
- 18  판매서비스          8 non-null      float64
- 19  자영업            9 non-null      float64
- 20  전업주부           42 non-null     float64
- 21  학생             43 non-null     float64
- 22  무직은퇴           8 non-null      float64
- 23  기타             41 non-null     float64
- 24  elmt           41 non-null     float64
- 25  mid            42 non-null     float64
- 26  high           44 non-null     float64
- 27  univ+          44 non-null     float64
- 28  per1           43 non-null     float64
- 29  per2           43 non-null     float64
- 30  per3+          44 non-null     float64
- 31  100만원 미만       38 non-null     float64
- 32  100~200만원 미만   42 non-null     float64
- 33  200~300만원 미만   43 non-null     float64
- 34  300~400만원 미만   43 non-null     float64
- 35  400~500만원 미만   43 non-null     float64
- 36  500~600만원 미만   42 non-null     float64
- 37  600만원 이상       43 non-null     float64
- 38  무응답            7 non-null      float64
- 39  year           44 non-null     object 
- 40  teens          42 non-null     float64
- 41  young_adults   42 non-null     float64
- 42  middle_adults  42 non-null     float64
- 43  senior         41 non-null     float64
- 44  l_sal          38 non-null     float64
- 45  m_sal          42 non-null     float64
- 46  h_sal          42 non-null     float64
- 47  nr             7 non-null      float64
-dtypes: float64(46), object(2)
-memory usage: 16.6+ KB</code></pre>
-</div>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"l_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"l_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"l_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"m_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"m_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"m_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"h_sal"</span>] <span class="op">=</span> (route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"h_sal"</span>] <span class="op">/</span> route.loc[<span class="dv">36</span>:<span class="dv">43</span>, <span class="st">"h_sal"</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="불필요한-열-없애기" class="level3">
 <h3 class="anchored" data-anchor-id="불필요한-열-없애기">불필요한 열 없애기</h3>
-<div id="e35a3adb" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 나이</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.drop([<span class="st">'15~19세'</span>, <span class="st">'20대'</span>, <span class="st">'30대'</span>, <span class="st">'40대'</span>, <span class="st">'50대'</span>, <span class="st">'60대'</span>, <span class="st">'70세 이상'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 직업</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.drop([<span class="st">'임금봉급근로자'</span>, <span class="st">'고용원있는사업주'</span>, <span class="st">'고용원없는자영업자'</span>, </span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'무급가족 종사자'</span>, <span class="st">'사무전문'</span>, <span class="st">'기술생산노무'</span>, <span class="st">'판매서비스'</span>,</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"자영업"</span>,<span class="st">"전업주부"</span>,<span class="st">"학생"</span>,<span class="st">"무직은퇴"</span>,<span class="st">"기타"</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                    </span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 월급                  </span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.drop([<span class="st">'100만원 미만'</span>, <span class="st">'100~200만원 미만'</span>, <span class="st">'200~300만원 미만'</span>, <span class="st">'300~400만원 미만'</span>, <span class="st">'400~500만원 미만'</span>,<span class="st">'500~600만원 미만'</span>, <span class="st">'600만원 이상'</span>, <span class="st">"무응답"</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>route.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="7a0bfb50" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 나이</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.drop([<span class="st">'15~19세'</span>, <span class="st">'20대'</span>, <span class="st">'30대'</span>, <span class="st">'40대'</span>, <span class="st">'50대'</span>, <span class="st">'60대'</span>, <span class="st">'70세 이상'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 직업</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.drop([<span class="st">'임금봉급근로자'</span>, <span class="st">'고용원있는사업주'</span>, <span class="st">'고용원없는자영업자'</span>, </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'무급가족 종사자'</span>, <span class="st">'사무전문'</span>, <span class="st">'기술생산노무'</span>, <span class="st">'판매서비스'</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"자영업"</span>,<span class="st">"전업주부"</span>,<span class="st">"학생"</span>,<span class="st">"무직은퇴"</span>,<span class="st">"기타"</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                    </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 월급                  </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>route <span class="op">=</span> route.drop([<span class="st">'100만원 미만'</span>, <span class="st">'100~200만원 미만'</span>, <span class="st">'200~300만원 미만'</span>, <span class="st">'300~400만원 미만'</span>, <span class="st">'400~500만원 미만'</span>,<span class="st">'500~600만원 미만'</span>, <span class="st">'600만원 이상'</span>, <span class="st">"무응답"</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>route.info() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 44 entries, 0 to 43
@@ -853,41 +367,41 @@ memory usage: 7.3+ KB</code></pre>
 </section>
 <section id="전처리한-데이터-파일-추출" class="level3">
 <h3 class="anchored" data-anchor-id="전처리한-데이터-파일-추출">전처리한 데이터 파일 추출</h3>
-<div id="ae0aa5b3" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>route.to_excel(<span class="st">'pre_route.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="0821ac91" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>route.to_excel(<span class="st">'pre_route.xlsx'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="개년-평균-경로-순위-막대그래프" class="level2">
 <h2 class="anchored" data-anchor-id="개년-평균-경로-순위-막대그래프">5개년 평균 경로 순위 막대그래프</h2>
-<div id="ccf268dd" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>pre_route <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/pre_route.xlsx"</span>)</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">##1. 5개년 평균 경로 순위 구하기</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>route2<span class="op">=</span>pre_route.groupby(<span class="st">"access_path"</span>)<span class="op">\</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>                .agg(total_mean <span class="op">=</span> (<span class="st">"total"</span>,<span class="st">"mean"</span>))</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>route2 <span class="op">=</span> route2.sort_values([<span class="st">"total_mean"</span>], ascending <span class="op">=</span> <span class="va">False</span>)</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co">##2. 그래프화 화기</span></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span><span class="st">'Malgun Gothic'</span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(bottom<span class="op">=</span><span class="fl">0.2</span>)</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>route2, x<span class="op">=</span><span class="st">"access_path"</span>, y<span class="op">=</span><span class="st">"total_mean"</span>, palette <span class="op">=</span> <span class="st">"Set1"</span>)</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'여행 정보 획득 경로'</span>)</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'소계'</span>)</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>plt.xticks(fontsize<span class="op">=</span><span class="dv">8</span>)</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'5개년 평균 여행 정보 획득 경로'</span>,fontsize<span class="op">=</span><span class="dv">15</span>)</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="002de18f" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>pre_route <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/pre_route.xlsx"</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">##1. 5개년 평균 경로 순위 구하기</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>route2<span class="op">=</span>pre_route.groupby(<span class="st">"access_path"</span>)<span class="op">\</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>                .agg(total_mean <span class="op">=</span> (<span class="st">"total"</span>,<span class="st">"mean"</span>))</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>route2 <span class="op">=</span> route2.sort_values([<span class="st">"total_mean"</span>], ascending <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="co">##2. 그래프화 화기</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span><span class="st">'Malgun Gothic'</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(bottom<span class="op">=</span><span class="fl">0.2</span>)</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>sns.barplot(data<span class="op">=</span>route2, x<span class="op">=</span><span class="st">"access_path"</span>, y<span class="op">=</span><span class="st">"total_mean"</span>, palette <span class="op">=</span> <span class="st">"Set1"</span>)</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'여행 정보 획득 경로'</span>)</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'소계'</span>)</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>plt.xticks(fontsize<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'5개년 평균 여행 정보 획득 경로'</span>,fontsize<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_11148\2622033830.py:19: FutureWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_16584\2622033830.py:19: FutureWarning:
 
 
 
@@ -906,29 +420,29 @@ Passing `palette` without assigning `hue` is deprecated and will be removed in v
 </section>
 <section id="연도별-정보-획득-경로-추이" class="level2">
 <h2 class="anchored" data-anchor-id="연도별-정보-획득-경로-추이">연도별 정보 획득 경로 추이</h2>
-<div id="23a10644" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.ticker <span class="im">import</span> MaxNLocator</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>pre_route <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/pre_route.xlsx"</span>)</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>route_path1 <span class="op">=</span> pre_route.query(<span class="st">"access_path=='acquaintance'"</span>)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>route_path2 <span class="op">=</span> pre_route.query(<span class="st">"access_path=='advertising'"</span>)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>route_path3 <span class="op">=</span> pre_route.query(<span class="st">"access_path=='no_information'"</span>)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>route_path4 <span class="op">=</span> pre_route.query(<span class="st">"access_path=='internet_mobile_app'"</span>)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>plt.plot(route_path1[<span class="st">"year"</span>], route_path1[<span class="st">"total"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">"지인 추천"</span>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>plt.plot(route_path2[<span class="st">"year"</span>], route_path2[<span class="st">"total"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">"광고(TV, 라디오 등)"</span>)</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>plt.plot(route_path3[<span class="st">"year"</span>], route_path3[<span class="st">"total"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">"정보 없이 여행"</span>)</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>plt.plot(route_path4[<span class="st">"year"</span>], route_path4[<span class="st">"total"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">"인터넷 및 모바일앱"</span>)</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>plt.gca().xaxis.set_major_locator(MaxNLocator(integer<span class="op">=</span><span class="va">True</span>))</span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(right<span class="op">=</span><span class="fl">0.71</span>)</span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>, bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>),fontsize<span class="op">=</span><span class="dv">7</span>)</span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span><span class="st">'Malgun Gothic'</span></span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'연도별 여행 정보 획득 경로'</span>,fontsize<span class="op">=</span><span class="dv">15</span>)</span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="13a8c01d" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.ticker <span class="im">import</span> MaxNLocator</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>pre_route <span class="op">=</span> pd.read_excel(<span class="st">"C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/youna/pre_route.xlsx"</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>route_path1 <span class="op">=</span> pre_route.query(<span class="st">"access_path=='acquaintance'"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>route_path2 <span class="op">=</span> pre_route.query(<span class="st">"access_path=='experience'"</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>route_path3 <span class="op">=</span> pre_route.query(<span class="st">"access_path=='no_information'"</span>)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>route_path4 <span class="op">=</span> pre_route.query(<span class="st">"access_path=='internet_mobile_app'"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>plt.clf()</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>plt.plot(route_path1[<span class="st">"year"</span>], route_path1[<span class="st">"total"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">"지인 추천"</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>plt.plot(route_path2[<span class="st">"year"</span>], route_path2[<span class="st">"total"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">"과거경험"</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>plt.plot(route_path3[<span class="st">"year"</span>], route_path3[<span class="st">"total"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">"정보 없이 여행"</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>plt.plot(route_path4[<span class="st">"year"</span>], route_path4[<span class="st">"total"</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">"인터넷 및 모바일앱"</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>plt.gca().xaxis.set_major_locator(MaxNLocator(integer<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(right<span class="op">=</span><span class="fl">0.71</span>)</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'upper left'</span>, bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>),fontsize<span class="op">=</span><span class="dv">7</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span><span class="st">'Malgun Gothic'</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'연도별 여행 정보 획득 경로'</span>,fontsize<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -981,7 +495,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1013,29 +538,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1043,7 +546,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

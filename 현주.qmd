@@ -16,7 +16,6 @@ import matplotlib.pyplot as plt
 # 파일 불러오기
 df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx")
 
-
 df = pd.read_excel("C:/Users/USER/Documents/LS빅데이터스쿨/team3_project/data/select.xlsx")
 df = pd.read_excel("./data/select.xlsx")
 df.head()
