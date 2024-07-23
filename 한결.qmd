@@ -1,29 +1,7 @@
 ---
-title: "2018-2022 5개년 연별 국내 여행 횟수 트랜드"
+title: "국내 여행 횟수"
 jupyter: python3
 ---
-
-## Raw Data : 통계청 - 월별 국내여행 횟수
-
--   [통계청 - 월별 국내 여행 횟수 다운로드 링크](https://kosis.kr/statHtml/statHtml.do?orgId=113&tblId=DT_113_STBL_1029207&vw_cd=MT_ZTITLE&list_id=314_31401_013&scrId=&seqNo=&lang_mode=ko&obj_var_id=&itm_id=&conn_path=MT_ZTITLE&path=%252FstatisticsList%252FstatisticsListIndex.do){.uri}
-
--   국내 여행의 의미
-
-    -   공간의 범위
-
-        행정구역상 현 거주지를 벗어나 다른 지역(시/군)을 다녀온 모든 여행을 의미
-
-    -   활동의 범위
-
-        1.  관광 여행
-
-            관광, 맛집 투어, 박물관, 전시 구경, 스포츠, 레저 체험 등의 모든 활동
-
-        2.  기타 여행
-
-            명절 귀성, 가족 행사, 출장, 업무 세미나 등 모든 활동
-
--   데이터의 기본 단위 : 천회
 
 ## Data Preprocessing : 데이터 전처리
 
