@@ -3,7 +3,7 @@ title: "지역별 관광지 검색 순위"
 jupyter: python3
 ---
 
-## 전처리
+## 전처리 
 
 ```{python}
 import numpy as np
