@@ -1,17 +1,11 @@
 ---
-title: "Team_Project3"
+title: "여행 데이터 시각화"
 jupyter: python3
 toc: false
 about:
     id: hero-heading
     template: jolla
-    links:
-     - icon: twitter
-       text: twitter
-       href: https://twitter.com
-     - icon: github
-       text: Github
-       href: https://github.com
 ---
 
-About this site
+ 사용한 데이터 : 월별 여행 횟수, 지역별 관광지 검색 순위, 관광 여행 정보 획득 경로, 관광여행 방문지 선택이유(1순위)
+
