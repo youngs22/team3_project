@@ -212,11 +212,10 @@ y2022 = p_num_trip.query('year == 2022')
 import matplotlib.pyplot as plt
 ```
 
-### 그래프에 한글과 언더바(\_) 표시가 가능하게 하기 위해 rcParams(runtime configuration) 딕셔너리 설정
+### 그래프에 한글 출력 가능하게 하기 위해 rcParams(runtime configuration) 딕셔너리 설정
 
 ```{python}
 plt.rcParams['font.family'] ='Malgun Gothic'
-plt.rcParams['axes.unicode_minus'] =False
 ```
 
 ### 1. 2018년도 부터 2020년도 까지 5년간 연령별 여행 횟수 증감의 트랜드 구하기
