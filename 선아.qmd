@@ -73,7 +73,7 @@ tour_total['combined_city'] = tour_total['state'] + " " + tour_total['city']
 tour_total.to_excel('total_tour.xlsx', index=False)
 # 결과 확인
 tour_total.info()
-print(tour_total.head())  # 상위 40개 행 출력
+print(tour_total.head())  
 print(tour_total['category_s'].unique())  # 카테고리 확인
 ```
 
